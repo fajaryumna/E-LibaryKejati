@@ -12,7 +12,7 @@
         .top-page {
             margin: 0;
             padding: 0 0 500px 0;
-            background-image: url(/resources/views/user/images/FotoDepanKejatiJateng.jpg);
+            background-image: url(/images/FotoDepanKejatiJateng.jpg);
             /* background-image: url("https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/243184779_262108162585008_5482248783908827866_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DlmOUTmLABAAX-ppGnD&_nc_ht=scontent-sin6-2.xx&oh=00_AfBThsdQpdS-pnw2C6Vf89FYYQ70ttKKCM0SCLZzRIxG3A&oe=63B6F437"); */
             background-size: cover;
         }

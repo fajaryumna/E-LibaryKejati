@@ -5,33 +5,41 @@
     <h2 class="koleksi-buku-text">PEMINJAMAN <span class="teks-ungu">BUKU</span></h2>
     <div class="text-center">
         <h2 class="text-pencarian">PENCARIAN</h2>
-        <div class="search-fields">
-            <div class="searches">
-                <h4 class="search-text">Judul Buku:</h4>
-                <input class="search-field" type="text" placeholder="Judul Buku">
-            </div>
-            <div class="searches">
-                <h4 class="search-text">Pengarang:</h4>
-                <input class="search-field" type="text" placeholder="Pengarang">
-            </div>
-            <div class="searches">
-                <h4 class="search-text">Penerbit:</h4>
-                <input class="search-field" type="text" placeholder="Penerbit">
-            </div>
-            <div class="searches">
-                <h4 class="search-text">Tahun Terbit:</h4>
-                <input class="search-field" type="text" placeholder="Tahun Terbit">
-            </div>
-            <div class="searches">
-                <h4 class="search-text">Jenis Buku:</h4>
-                <input class="search-field" type="text" placeholder="Jenis Buku">
-            </div>
+        <form id="selectform">
+            <div class="search-fields" id="selectform">
+                <div class="searches">
+                    <h4 class="search-text">Judul Buku:</h4>
+                    <input class="search-field" id="judul-buku" type="text" placeholder="Judul Buku">
+                </div>
+                <div class="searches">
+                    <h4 class="search-text">Pengarang:</h4>
+                    <input class="search-field" id="pengarang-buku" type="text" placeholder="Pengarang">
+                </div>
+                <div class="searches">
+                    <h4 class="search-text">Penerbit:</h4>
+                    <input class="search-field" id="penerbit-buku" type="text" placeholder="Penerbit">
+                </div>
+                <div class="searches">
+                    <h4 class="search-text">Tahun Terbit:</h4>
+                    <input class="search-field" id="tahun-buku" type="text" placeholder="Tahun Terbit">
+                </div>
+                <div class="searches">
+                    <h4 class="search-text">Jenis Buku:</h4>
+                    <input class="search-field" id="jenis-buku" type="text" placeholder="Jenis Buku">
+                </div>
 
-        </div>
-        <div class="search-buttons">
-            <button href="#" class="search-button" id="search-button-search">Cari</button>
-            <button href="#" class="search-button" id="search-button-reset">Reset</button>
-        </div>
+            </div>
+            <div class="search-buttons">
+                <button href="#" class="search-button" id="search-button-search">Cari</button>
+                <button href="#" class="search-button" id="search-button-reset" onclick="document.getElementById('selectform').reset();
+                 document.getElementById('judul-buku').value = null;
+                 document.getElementById('pengarang-buku').value = null;
+                 document.getElementById('penerbit-buku').value = null;
+                 document.getElementById('tahun-buku').value = null;
+                 document.getElementById('jenis-buku').value = null;
+                 return false;">Reset</button>
+            </div>
+        </form>
     </div>
 </div>
 
