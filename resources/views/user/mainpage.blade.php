@@ -87,11 +87,10 @@
             <tr>
                 <th scope="row">{{ $nomor++ }}</th>
                 <td>{{ $data -> judul_buku }}</td>
-                <td>{{ $data -> no_rak }}</td>
                 <td>{{ $data -> nama_pengarang }}</td>
                 <td>{{ $data -> penerbit }}</td>
                 <td>{{ $data -> tahun_terbit }}</td>
-                <td>{{ $data -> penerbit }}</td>
+                <td>{{ $data -> jumlah }}</td>
                 <td>{{ $data -> jenis_buku }}</td>
             </tr>
             @endforeach
@@ -100,7 +99,7 @@
         {{-- {{ $datas->links() }} --}}
 
 
-        {{-- <div>
+        <!-- <div>
             <div class="display-flex-between">
                 <h4 class="juduls buku">Ini judul buku pertama</h4>
                 <h4 class="juduls buku">saya yang ngarang</h4>
@@ -187,10 +186,11 @@
                 <h4 class="juduls buku">udah dari lama</h4>
                 <h4 class="juduls buku">420</h4>
                 <h4 class="juduls buku">novel</h4>
-            </div> --}}
+            </div>
 
 
-        </div>
+        </div> -->
+
         <hr color="black" width="100%" size="1px">
         <div class="bottom-buttons">
             <a href="/peminjamanpage">

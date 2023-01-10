@@ -14,7 +14,7 @@
         .top-page {
             margin: 0;
             padding: 0 0 500px 0;
-            background-image: url(/resources/views/user/images/FotoDepanKejatiJateng.jpg);
+            background-image: url(images/FotoDepanKejatiJateng.jpg);
             /* background-image: url("https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/243184779_262108162585008_5482248783908827866_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DlmOUTmLABAAX-ppGnD&_nc_ht=scontent-sin6-2.xx&oh=00_AfBThsdQpdS-pnw2C6Vf89FYYQ70ttKKCM0SCLZzRIxG3A&oe=63B6F437"); */
             background-size: cover;
         }
@@ -417,14 +417,14 @@
         <div class="top-page">
             <div class="text-shadow display-flex-between">
                 <div>
-                    <a href='/'>
+                    <a href='/mainpage'>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png"
                             width="7%">
 
                     </a>
                 </div>
                 <div class="top-right-contents">
-                    <a class="top-right-content" href="/">Beranda</a>
+                    <a class="top-right-content" href="/mainpage">Beranda</a>
                     <a class="top-right-content" href="/peminjamanpage">Peminjaman</a>
                     <a class="top-right-content" href="/faqpage">FAQ</a>
                     <a class="top-right-content">Login</a>
