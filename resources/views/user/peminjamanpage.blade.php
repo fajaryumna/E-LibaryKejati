@@ -1,3 +1,6 @@
+@extends('user.navtop')
+@section('content')
+
 <div>
     <h2 class="koleksi-buku-text">PEMINJAMAN <span class="teks-ungu">BUKU</span></h2>
     <div class="text-center">
@@ -77,7 +80,7 @@
             <h4 class="juduls buku">taun lalu</h4>
             <h4 class="juduls buku">0</h4>
             <h4 class="juduls buku">karangan</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between even-buku">
@@ -87,7 +90,7 @@
             <h4 class="juduls buku">taun depan</h4>
             <h4 class="juduls buku">-1</h4>
             <h4 class="juduls buku">fakta</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between">
@@ -97,7 +100,7 @@
             <h4 class="juduls buku">kapan kapan</h4>
             <h4 class="juduls buku">69</h4>
             <h4 class="juduls buku">fiksi</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between even-buku">
@@ -107,7 +110,7 @@
             <h4 class="juduls buku">udah dari lama</h4>
             <h4 class="juduls buku">420</h4>
             <h4 class="juduls buku">novel</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between">
@@ -117,7 +120,7 @@
             <h4 class="juduls buku">kapan kapan</h4>
             <h4 class="juduls buku">69</h4>
             <h4 class="juduls buku">fiksi</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between even-buku">
@@ -127,7 +130,7 @@
             <h4 class="juduls buku">udah dari lama</h4>
             <h4 class="juduls buku">420</h4>
             <h4 class="juduls buku">novel</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
         <div class="display-flex-between">
             <h4 class="juduls buku">Ini judul buku ketujuh</h4>
@@ -136,7 +139,7 @@
             <h4 class="juduls buku">kapan kapan</h4>
             <h4 class="juduls buku">69</h4>
             <h4 class="juduls buku">fiksi</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between even-buku">
@@ -146,7 +149,7 @@
             <h4 class="juduls buku">udah dari lama</h4>
             <h4 class="juduls buku">420</h4>
             <h4 class="juduls buku">novel</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
         <div class="display-flex-between">
             <h4 class="juduls buku">Ini judul buku kesembilan</h4>
@@ -155,7 +158,7 @@
             <h4 class="juduls buku">kapan kapan</h4>
             <h4 class="juduls buku">69</h4>
             <h4 class="juduls buku">fiksi</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
         <div class="display-flex-between even-buku">
@@ -165,7 +168,7 @@
             <h4 class="juduls buku">udah dari lama</h4>
             <h4 class="juduls buku">420</h4>
             <h4 class="juduls buku">novel</h4>
-            <h4 class="juduls material-symbols-outlined">check_box</h4>
+            <input class="juduls buku" type="checkbox" id="buku1" name="buku1" value="buku1">
         </div>
 
 
@@ -217,9 +220,13 @@
             </div>
         </div>
         <div id="kirim-placement">
-            <button id="kirim-peminjaman">Kirim</button>
+            <a href='/'>
+                <button id="kirim-peminjaman">Kirim</button>
+            </a>
+
         </div>
     </div>
 
 
 </div>
+@endsection

@@ -1,3 +1,6 @@
+@extends('user.navtop')
+@section('content')
+
 <h2 class="koleksi-buku-text">
     FREQUENTLY
     <span class="teks-ungu">ASKED QUESTIONS</span>
@@ -22,3 +25,5 @@
     </div>
 
 </div>
+
+@endsection

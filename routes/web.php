@@ -22,6 +22,10 @@ Route::get('/peminjamanpage', function () {
     return view('user.peminjamanpage');
 });
 
+Route::get('/faqpage', function () {
+    return view('user.faqpage');
+});
+
 Route::get('/invoicepage', function () {
     return view('user.invoicepage');
 });
