@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.mainpage');
+});
+
+
+Route::get('/peminjamanpage', function () {
+    return view('user.peminjamanpage');
+});
+
+Route::get('/invoicepage', function () {
+    return view('user.invoicepage');
 });
