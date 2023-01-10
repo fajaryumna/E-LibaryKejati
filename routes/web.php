@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BukuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.mainpage');
-});
+// Route::get('/', function () {
+//     return view('user.mainpage');
+// });
 
+// Route::get('/peminjamanpage', function () {
+//     return view('user.peminjamanpage');
+// });
 
-Route::get('/peminjamanpage', function () {
-    return view('user.peminjamanpage');
-});
+Route::get('/mainpage', [BukuController::class, 'indexMain'])->name('mainpage'); //show 
+Route::get('/peminjamanpage', [BukuController::class, 'indexPeminjaman'])->name('peminjamanpage'); //show 
+
 
 Route::get('/faqpage', function () {
     return view('user.faqpage');
