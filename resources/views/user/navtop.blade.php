@@ -7,7 +7,8 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    @if(Request::path() == '/mainpage')
+    {{-- @if(Request::path() == '/mainpage') --}}
+    @if (Route::current()->getName() == 'mainpage')
     <style>
         .top-page {
             margin: 0;
@@ -432,7 +433,7 @@
             <div class="text-shadow display-flex-between">
                 <div>
                     <a href='/mainpage'>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png" width="7%">
+                        <img src="images/logo-kejati.png" width="40%">
 
                     </a>
                 </div>
