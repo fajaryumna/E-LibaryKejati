@@ -5,11 +5,9 @@
     <title>Perpustakaan Kejati Jawa Tengah</title>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    @if(Request::path() == '/')
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    @if(Request::path() == '/mainpage')
     <style>
         .top-page {
             margin: 0;
@@ -37,7 +35,9 @@
 
         body,
         input,
-        button {
+        button,
+        th,
+        td {
             font-family: 'Poppins';
         }
 
@@ -173,13 +173,18 @@
         }
 
         .tabel-buku {
-            margin: 70px 15% 0 15%;
+            margin: 70px 10% 0 10%;
         }
 
         .juduls {
             margin: 15px 5px;
             width: 40%;
-            text-align: center;
+            text-align: center
+        }
+
+        #no_buku{
+            width: 23%;
+            text-align: center
         }
 
         .filter-button {
@@ -189,6 +194,7 @@
 
         .buku {
             font-weight: lighter;
+            text-align: start;
         }
 
         .even-buku {
@@ -229,7 +235,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 50%;
+            width: 45%;
         }
 
         .tabel-nomor {
@@ -238,7 +244,7 @@
             font-weight: bold;
         }
 
-        #nomor-satu {
+        #nomor-terpilih {
             background-color: #d9d9d9;
             padding: 5px 10px;
             border-radius: 5px;
@@ -247,6 +253,14 @@
         #tabel-selanjutnya {
             background-color: #d98e04;
             color: #f6f6f6;
+            border-radius: 10px;
+            border: none;
+            padding: 7px 15px;
+        }
+
+        #tabel-sebelumnya {
+            background-color: #d9d9d9;
+            color: default;
             border-radius: 10px;
             border: none;
             padding: 7px 15px;
@@ -392,10 +406,10 @@
 
         .material-symbols-outlined {
             font-variation-settings:
-                'FILL'0,
-                'wght'400,
-                'GRAD'0,
-                'opsz'24
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
         }
 
         .no-margin {
@@ -418,8 +432,7 @@
             <div class="text-shadow display-flex-between">
                 <div>
                     <a href='/mainpage'>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png"
-                            width="7%">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png" width="7%">
 
                     </a>
                 </div>
@@ -443,8 +456,7 @@
 
         <div class="footer-content">
             <div class="top-footer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png"
-                    width="7%">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png" width="7%">
                 <div id="judul-footer">
                     <h2>Kejaksaan Tinggi Jawa Tengah</h2>
                     <h4>"Menjadi Lembaga Penegak Hukum yang Profesional, Proporsional, dan Akuntabel"</h4>
@@ -487,14 +499,10 @@
                         <h3>Sosial Media</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><button
-                                class="footer-sosmed-logo">F</button></a>
-                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><button
-                                class="footer-sosmed-logo">T</button></a>
-                        <a href='https://www.instagram.com/kejatijateng' target="_blank"> <button
-                                class="footer-sosmed-logo">I</button></a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"> <button
-                                class="footer-sosmed-logo">Y</button></a>
+                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><button class="footer-sosmed-logo">F</button></a>
+                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><button class="footer-sosmed-logo">T</button></a>
+                        <a href='https://www.instagram.com/kejatijateng' target="_blank"> <button class="footer-sosmed-logo">I</button></a>
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"> <button class="footer-sosmed-logo">Y</button></a>
                     </div>
                 </div>
             </div>
