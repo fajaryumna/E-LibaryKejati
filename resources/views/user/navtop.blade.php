@@ -5,26 +5,29 @@
     <title>Perpustakaan Kejati Jawa Tengah</title>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    {{-- @if(Request::path() == '/mainpage') --}}
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    {{-- @if (Request::path() == '/mainpage') --}}
     @if (Route::current()->getName() == 'mainpage')
-    <style>
-        .top-page {
-            margin: 0;
-            padding: 0 0 500px 0;
-            background-image: url(images/FotoDepanKejatiJateng.jpg);
-            /* background-image: url("https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/243184779_262108162585008_5482248783908827866_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DlmOUTmLABAAX-ppGnD&_nc_ht=scontent-sin6-2.xx&oh=00_AfBThsdQpdS-pnw2C6Vf89FYYQ70ttKKCM0SCLZzRIxG3A&oe=63B6F437"); */
-            background-size: cover;
-        }
-    </style>
+        <style>
+            .top-page {
+                margin: 0;
+                padding: 0 0 500px 0;
+                background-image: url(images/FotoDepanKejatiJateng.jpg);
+                /* background-image: url("https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/243184779_262108162585008_5482248783908827866_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DlmOUTmLABAAX-ppGnD&_nc_ht=scontent-sin6-2.xx&oh=00_AfBThsdQpdS-pnw2C6Vf89FYYQ70ttKKCM0SCLZzRIxG3A&oe=63B6F437"); */
+                background-size: cover;
+            }
+        </style>
     @else
-    <style>
-        .top-page {
-            margin: 0;
-            box-shadow: 0 0 50px -20px black;
-        }
-    </style>
+        <style>
+            .top-page {
+                margin: 0;
+                box-shadow: 0 0 50px -20px black;
+            }
+        </style>
     @endif
 
     <style>
@@ -33,6 +36,7 @@
             margin: 0;
             background-color: beige;
         }
+
 
         body,
         input,
@@ -75,6 +79,7 @@
             font-size: xx-large;
             font-weight: 900;
             text-align: center;
+            margin-top: 20px
         }
 
         .text-pencarian {
@@ -183,7 +188,7 @@
             text-align: center
         }
 
-        #no_buku{
+        #no_buku {
             width: 23%;
             text-align: center
         }
@@ -314,6 +319,7 @@
         .pertanyaans {
             width: 70%;
             border: none;
+            height: 60px;
             margin: 25px 15%;
             padding: 0px 30px;
             background-color: #d9d9d9;
@@ -407,10 +413,10 @@
 
         .material-symbols-outlined {
             font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
+                'FILL'0,
+                'wght'400,
+                'GRAD'0,
+                'opsz'24
         }
 
         .no-margin {
@@ -457,7 +463,8 @@
 
         <div class="footer-content">
             <div class="top-footer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png" width="7%">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png"
+                    width="7%">
                 <div id="judul-footer">
                     <h2>Kejaksaan Tinggi Jawa Tengah</h2>
                     <h4>"Menjadi Lembaga Penegak Hukum yang Profesional, Proporsional, dan Akuntabel"</h4>
@@ -500,10 +507,14 @@
                         <h3>Sosial Media</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><button class="footer-sosmed-logo">F</button></a>
-                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><button class="footer-sosmed-logo">T</button></a>
-                        <a href='https://www.instagram.com/kejatijateng' target="_blank"> <button class="footer-sosmed-logo">I</button></a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"> <button class="footer-sosmed-logo">Y</button></a>
+                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><button
+                                class="footer-sosmed-logo">F</button></a>
+                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><button
+                                class="footer-sosmed-logo">T</button></a>
+                        <a href='https://www.instagram.com/kejatijateng' target="_blank"> <button
+                                class="footer-sosmed-logo">I</button></a>
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"> <button
+                                class="footer-sosmed-logo">Y</button></a>
                     </div>
                 </div>
             </div>
