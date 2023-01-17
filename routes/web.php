@@ -22,7 +22,9 @@ use App\Http\Controllers\BukuController;
 // });
 
 Route::get('/mainpage', [BukuController::class, 'indexMain'])->name('mainpage'); //show 
+// Route::get('/mainpage/search', [BukuController::class, 'main_search'])->name('main_search'); //show 
 Route::get('/peminjamanpage', [BukuController::class, 'indexPeminjaman'])->name('peminjamanpage'); //show 
+// Route::get('/peminjamanpage/search', [BukuController::class, 'search_peminjaman'])->name('search_peminjaman'); //show 
 
 
 Route::get('/faqpage', function () {
