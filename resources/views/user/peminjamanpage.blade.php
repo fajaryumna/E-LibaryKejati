@@ -4,7 +4,7 @@
     <h2 class="koleksi-buku-text">PEMINJAMAN <span class="teks-ungu">BUKU</span></h2>
     <div class="text-center">
         <h2 class="text-pencarian">PENCARIAN</h2>
-        <form id="selectform">
+        <form id="selectform" action="{{ route('peminjamanpage') }}" method="GET">
             <div class="search-fields" id="selectform">
                 <div class="searches">
                     <h4 class="search-text">Judul Buku:</h4>
@@ -35,7 +35,7 @@
             </div>
             <div class="search-buttons">
                 <button href="#" class="search-button" id="search-button-search">Cari</button>
-                <button href="#" class="search-button" id="search-button-reset" onclick="document.getElementById('selectform').reset();
+                <button href="#" class="search-button" id="search-button-reset" type="reset" onclick="document.getElementById('selectform').reset();
                  document.getElementById('judul-buku').value = null;
                  document.getElementById('pengarang-buku').value = null;
                  document.getElementById('penerbit-buku').value = null;
@@ -246,4 +246,11 @@
 
 
     </div>
+
+    <script>
+        document.getElementById("selectform").addEventListener("reset", function (event) {
+            event.preventDefault();
+            window.location.href = '/peminjamanpage';
+        });
+    </script>
     @endsection

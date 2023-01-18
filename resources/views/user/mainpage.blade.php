@@ -211,4 +211,11 @@
 
         </div>
     </div>
+
+    <script>
+        document.getElementById("selectform").addEventListener("reset", function (event) {
+            event.preventDefault();
+            window.location.href = '/mainpage';
+        });
+    </script>
     @endsection
