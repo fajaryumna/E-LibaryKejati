@@ -83,7 +83,7 @@
             align-items: center;
         }
 
-        .bold{
+        .bold {
             font-weight: bold;
         }
     </style>
@@ -104,14 +104,14 @@
         <div class="display-flex-between invoice-table-contents even-item-invoice-table">
             <h4 class="invoice-table-content invoice-table-judul">Nama Peminjam</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>Fulan bin Fulanah</h4>
+                <h4>{{ $peminjaman->nama }}</h4>
             </div>
         </div>
 
         <div class="display-flex-between invoice-table-contents">
             <h4 class="invoice-table-content invoice-table-judul">Tanggal Pinjam</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>30 Februari 2020</h4>
+                <h4>{{ $peminjaman->tanggal_pinjam->format('D d M Y') }}</h4>
             </div>
         </div>
 
@@ -119,15 +119,23 @@
             <h4 class="invoice-table-content invoice-table-judul">Judul Buku / Lemari Buku</h4>
             <div class="invoice-table-content invoice-table-isian">
                 <h4>1. LEMBAGA PENINJAUAN KEMBALI (PK) PERKARA PIDANA / <span class='bold'>1A</span></h4>
-                <h4>2. DELIK DELIK KHUSUS KEJAHATAN MEMBAHAYAKAN KEPERCAYAAN UMUM TERHADAP SURAT, ALAT PEMBAYARAN, ALAT BUKTI,DAN PERADILAN / <span class='bold'>2A</span></h4>
-                <h4>3. DARI TIADA PIDANA TANPA KESALAHAN MENUKU KEPADA TIADA PERTANGGUNGJAWABAN PIDANA TANPA KESALAHAN / <span class='bold'>3B</span></h4>
-                <h4>4. DELIK DELIK KHUSUS KEJAHATAN JABATAN & KEJAHATAN JABATAN TERTENTU SEBAGAI TINDAK PIDANA KORUPSI / <span class='bold'>4B</span></h4>
-                <h4>5. HUKUM ACARA PIDANA surat surat resmi dipengadilan oleh advokad / <span class='bold'>5C</span></h4>
+                <h4>2. DELIK DELIK KHUSUS KEJAHATAN MEMBAHAYAKAN KEPERCAYAAN UMUM TERHADAP SURAT, ALAT PEMBAYARAN, ALAT
+                    BUKTI,DAN PERADILAN / <span class='bold'>2A</span></h4>
+                <h4>3. DARI TIADA PIDANA TANPA KESALAHAN MENUKU KEPADA TIADA PERTANGGUNGJAWABAN PIDANA TANPA KESALAHAN /
+                    <span class='bold'>3B</span>
+                </h4>
+                <h4>4. DELIK DELIK KHUSUS KEJAHATAN JABATAN & KEJAHATAN JABATAN TERTENTU SEBAGAI TINDAK PIDANA KORUPSI /
+                    <span class='bold'>4B</span>
+                </h4>
+                <h4>5. HUKUM ACARA PIDANA surat surat resmi dipengadilan oleh advokad / <span class='bold'>5C</span>
+                </h4>
                 <h4>6. PERADILAN PIDANA ANAK DIINDONESIA / <span class='bold'>6D</span></h4>
-                <h4>7. MENGHITUNG KERUGIAN KEUANGAN NEGARA DALAM TINDAK PIDANA KORUPSI / <span class='bold'>7D</span></h4>
+                <h4>7. MENGHITUNG KERUGIAN KEUANGAN NEGARA DALAM TINDAK PIDANA KORUPSI / <span class='bold'>7D</span>
+                </h4>
                 <h4>8. TERMINOLOGI HUKUM PIDANA / <span class='bold'>8D</span></h4>
                 <h4>9. LEMBAGA PIDANA BERSYARAT / <span class='bold'>9D</span></h4>
-                <h4>10. MASALAH PENEGAKAN HUKUM DAN KEBIJAKAN HUKUM PIDANA DALAM PENANGGULANGAN KEJAHATAN / <span class='bold'>10E</span></h4>
+                <h4>10. MASALAH PENEGAKAN HUKUM DAN KEBIJAKAN HUKUM PIDANA DALAM PENANGGULANGAN KEJAHATAN / <span
+                        class='bold'>10E</span></h4>
             </div>
         </div>
 

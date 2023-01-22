@@ -246,10 +246,10 @@
         </div>
 </form>
 
-{{-- <script>
+<script>
     document.getElementById("selectform").addEventListener("reset", function (event) {
             event.preventDefault();
             window.location.href = '/peminjamanpage';
         });
-</script> --}}
+</script>
 @endsection
