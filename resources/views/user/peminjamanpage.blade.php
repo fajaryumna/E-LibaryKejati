@@ -4,7 +4,7 @@
     <h2 class="koleksi-buku-text">PEMINJAMAN <span class="teks-ungu">BUKU</span></h2>
     <div class="text-center">
         <h2 class="text-pencarian">PENCARIAN</h2>
-        <form id="selectform" action="{{ route('peminjamanpage') }}" method="GET">
+        <form id="selectform">
             <div class="search-fields" id="selectform">
                 <div class="searches">
                     <h4 class="search-text">Judul Buku:</h4>
@@ -47,210 +47,209 @@
     </div>
 </div>
 
-<div class="tabel-buku">
-    <h5>Menampilkan
-        <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">10</button>
-            <span class="jumlah-buku-contents">
-                <a class="jumlah-buku-content" href="#">10</a>
-                <a class="jumlah-buku-content" href="#">20</a>
-                <a class="jumlah-buku-content" href="#">50</a>
-                <a class="jumlah-buku-content" href="#">100</a>
-            </span></span> data
-    </h5>
-    <div class="display-flex-between">
-        <h4 class="juduls " id="no_buku">No
-            <span class="material-symbols-outlined">
-                unfold_more
-            </span>
-        </h4>
-        <h4 class="juduls ">Judul Buku
-            <span class="material-symbols-outlined">
-                unfold_more
-            </span>
-        </h4>
-        <h4 class="juduls ">Pengarang <span class="material-symbols-outlined">
-                unfold_more
-            </span></h4>
-        <h4 class="juduls ">Penerbit <span class="material-symbols-outlined">
-                unfold_more
-            </span></h4>
-        <h4 class="juduls ">Tahun Terbit <span class="material-symbols-outlined">
-                unfold_more
-            </span></h4>
-        <h4 class="juduls " id="no_buku">Jumlah <span class="material-symbols-outlined">
-                unfold_more
-            </span></h4>
-        <h4 class="juduls ">Jenis Buku <span class="material-symbols-outlined">
-                unfold_more
-            </span></h4>
-        <h4 class="juduls ">Pinjam <span class="material-symbols-outlined">
-                check_box
-            </span></h4>
-
-    </div>
-    <hr color="black" width="100%" size="1px">
-
-    @php
-    $nomor = $datas->currentPage() * 10 - 10 + 1;
-    @endphp
-    @foreach ($datas as $data)
-    @if ($nomor % 2 == 1)
-    <div class="display-flex-between">
-        @else
-        <div class="display-flex-between even-buku">
-            @endif
-            <h4 class="juduls buku" id="no_buku">{{ $nomor++ }}</h4>
-            <h4 class="juduls buku">{{ $data->judul_buku }}</h4>
-            <h4 class="juduls buku">{{ $data->nama_pengarang }}</h4>
-            <h4 class="juduls buku text-center">{{ $data->penerbit }}</h4>
-            <h4 class="juduls buku text-center">{{ $data->tahun_terbit }}</h4>
-            <h4 class="juduls buku" id="no_buku">{{ $data->jumlah }}</h4>
-            <h4 class="juduls buku text-center">{{ $data->jenis_buku }}</h4>
-            <input class="juduls buku" type="checkbox" id="{{ $data->id }}" name="{{ $data->id }}"
-                value="{{ $data->id }}">
+<form action="{{ route('store_peminjaman') }}" method="post" enctype="multipart/form-data">
+    @csrf
+    <div class="tabel-buku">
+        <h5>Menampilkan
+            <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">10</button>
+                <span class="jumlah-buku-contents">
+                    <a class="jumlah-buku-content" href="#">10</a>
+                    <a class="jumlah-buku-content" href="#">20</a>
+                    <a class="jumlah-buku-content" href="#">50</a>
+                    <a class="jumlah-buku-content" href="#">100</a>
+                </span></span> data
+        </h5>
+        <div class="display-flex-between">
+            <h4 class="juduls " id="no_buku">No
+                <span class="material-symbols-outlined">
+                    unfold_more
+                </span>
+            </h4>
+            <h4 class="juduls ">Judul Buku
+                <span class="material-symbols-outlined">
+                    unfold_more
+                </span>
+            </h4>
+            <h4 class="juduls ">Pengarang <span class="material-symbols-outlined">
+                    unfold_more
+                </span></h4>
+            <h4 class="juduls ">Penerbit <span class="material-symbols-outlined">
+                    unfold_more
+                </span></h4>
+            <h4 class="juduls ">Tahun Terbit <span class="material-symbols-outlined">
+                    unfold_more
+                </span></h4>
+            <h4 class="juduls " id="no_buku">Jumlah <span class="material-symbols-outlined">
+                    unfold_more
+                </span></h4>
+            <h4 class="juduls ">Jenis Buku <span class="material-symbols-outlined">
+                    unfold_more
+                </span></h4>
+            <h4 class="juduls ">Pinjam <span class="material-symbols-outlined">
+                    check_box
+                </span></h4>
 
         </div>
-        @endforeach
-
         <hr color="black" width="100%" size="1px">
-        <div class="bottom-buttons">
-            <div></div>
-            <div id="bottom-right">
-                <p>Halaman {{ $datas->currentPage() }}/{{ $datas->lastPage() }}</p>
-                @if ($datas->currentPage() != 1)
-                <style>
-                    #bottom-right {
-                        width: 63%;
-                    }
-                </style>
-                <a href="{{ $datas->previousPageUrl() }}">
-                    <button id="tabel-sebelumnya">
-                        <- Sebelumnya </button>
-                </a>
-                @endif
 
-                @if ($datas->currentPage() >= 4)
-                <a href="{{ $datas->url(1) }}">
-                    <button class="tabel-nomor">
-                        &lt;&lt;
-                    </button>
-                </a>
-                @endif
-                @if ($datas->currentPage() == $datas->lastPage())
-                <a href="{{ $datas->url($datas->currentPage() - 5) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() - 2 }}</button>
-                </a>
-                <a href="{{ $datas->url($datas->currentPage() - 4) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
-                </a>
-                @elseif ($datas->currentPage() == $datas->lastPage() - 1)
-                <a href="{{ $datas->url($datas->currentPage() - 4) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
-                </a>
-                @endif
+        @php
+        $nomor = $datas->currentPage() * 10 - 10 + 1;
+        @endphp
 
-                @if ($datas->currentPage() >= 3 || $datas->currentPage() == $datas->lastPage())
-                <a href="{{ $datas->url($datas->currentPage() - 2) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() - 2 }}</button>
-                </a>
-                <a href="{{ $datas->url($datas->currentPage() - 1) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
-                </a>
-                @elseif ($datas->currentPage() == 2 || $datas->currentPage() == $datas->lastPage() - 1)
-                <a href="{{ $datas->url($datas->currentPage() - 1) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
-                </a>
+        @foreach ($datas as $data)
+        @if ($nomor % 2 == 1)
+        <div class="display-flex-between">
+            @else
+            <div class="display-flex-between even-buku">
                 @endif
+                <h4 class="juduls buku" id="no_buku">{{ $nomor++ }}</h4>
+                <h4 class="juduls buku">{{ $data->judul_buku }}</h4>
+                <h4 class="juduls buku">{{ $data->nama_pengarang }}</h4>
+                <h4 class="juduls buku text-center">{{ $data->penerbit }}</h4>
+                <h4 class="juduls buku text-center">{{ $data->tahun_terbit }}</h4>
+                <h4 class="juduls buku" id="no_buku">{{ $data->jumlah }}</h4>
+                <h4 class="juduls buku text-center">{{ $data->jenis_buku }}</h4>
+                <input class="juduls buku" type="checkbox" id="{{ $data->id }}" name="buku_id[]"
+                    value="{{ $data->id }}">
 
-                <a href="{{ $datas->url($datas->currentPage()) }}">
-                    <button class="tabel-nomor" id="nomor-terpilih">{{ $datas->currentPage() }}</button>
-                </a>
+            </div>
+            @endforeach
 
-                @if ($datas->currentPage() == $datas->lastPage() - 1)
-                <a href="{{ $datas->url($datas->currentPage() + 1) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
-                </a>
-                @elseif ($datas->currentPage() != $datas->lastPage())
-                <a href="{{ $datas->url($datas->currentPage() + 1) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
-                </a>
-                <a href="{{ $datas->url($datas->currentPage() + 2) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() + 2 }}</button>
-                </a>
-                @endif
-
-                @if ($datas->currentPage() == 1)
-                <a href="{{ $datas->url($datas->currentPage() + 3) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() + 3 }}</button>
-                </a>
-                <a href="{{ $datas->url($datas->currentPage() + 4) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() + 4 }}</button>
-                </a>
-                @elseif ($datas->currentPage() == 2)
-                <a href="{{ $datas->url($datas->currentPage() + 3) }}">
-                    <button class="tabel-nomor">{{ $datas->currentPage() + 3 }}</button>
-                </a>
-                @endif
-                @if ($datas->currentPage() <= $datas->lastPage() - 3)
-                    <a href="{{ $datas->url($datas->lastPage()) }}">
-                        <button class="tabel-nomor">&gt;&gt;</button>
+            <hr color="black" width="100%" size="1px">
+            <div class="bottom-buttons">
+                <div></div>
+                <div id="bottom-right">
+                    <p>Halaman {{ $datas->currentPage() }}/{{ $datas->lastPage() }}</p>
+                    @if ($datas->currentPage() != 1)
+                    <style>
+                        #bottom-right {
+                            width: 63%;
+                        }
+                    </style>
+                    <a href="{{ $datas->previousPageUrl() }}">
+                        <button id="tabel-sebelumnya">
+                            <- Sebelumnya </button>
                     </a>
                     @endif
 
-                    @if ($datas->currentPage() != $datas->lastPage())
-                    <a href="{{ $datas->nextPageUrl() }}">
-                        <button id="tabel-selanjutnya">
-                            Selanjutnya ->
+                    @if ($datas->currentPage() >= 4)
+                    <a href="{{ $datas->url(1) }}">
+                        <button class="tabel-nomor">
+                            &lt;&lt;
                         </button>
                     </a>
                     @endif
+                    @if ($datas->currentPage() == $datas->lastPage())
+                    <a href="{{ $datas->url($datas->currentPage() - 5) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() - 2 }}</button>
+                    </a>
+                    <a href="{{ $datas->url($datas->currentPage() - 4) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
+                    </a>
+                    @elseif ($datas->currentPage() == $datas->lastPage() - 1)
+                    <a href="{{ $datas->url($datas->currentPage() - 4) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
+                    </a>
+                    @endif
 
+                    @if ($datas->currentPage() >= 3 || $datas->currentPage() == $datas->lastPage())
+                    <a href="{{ $datas->url($datas->currentPage() - 2) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() - 2 }}</button>
+                    </a>
+                    <a href="{{ $datas->url($datas->currentPage() - 1) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
+                    </a>
+                    @elseif ($datas->currentPage() == 2 || $datas->currentPage() == $datas->lastPage() - 1)
+                    <a href="{{ $datas->url($datas->currentPage() - 1) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
+                    </a>
+                    @endif
+
+                    <a href="{{ $datas->url($datas->currentPage()) }}">
+                        <button class="tabel-nomor" id="nomor-terpilih">{{ $datas->currentPage() }}</button>
+                    </a>
+
+                    @if ($datas->currentPage() == $datas->lastPage() - 1)
+                    <a href="{{ $datas->url($datas->currentPage() + 1) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
+                    </a>
+                    @elseif ($datas->currentPage() != $datas->lastPage())
+                    <a href="{{ $datas->url($datas->currentPage() + 1) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
+                    </a>
+                    <a href="{{ $datas->url($datas->currentPage() + 2) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() + 2 }}</button>
+                    </a>
+                    @endif
+
+                    @if ($datas->currentPage() == 1)
+                    <a href="{{ $datas->url($datas->currentPage() + 3) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() + 3 }}</button>
+                    </a>
+                    <a href="{{ $datas->url($datas->currentPage() + 4) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() + 4 }}</button>
+                    </a>
+                    @elseif ($datas->currentPage() == 2)
+                    <a href="{{ $datas->url($datas->currentPage() + 3) }}">
+                        <button class="tabel-nomor">{{ $datas->currentPage() + 3 }}</button>
+                    </a>
+                    @endif
+                    @if ($datas->currentPage() <= $datas->lastPage() - 3)
+                        <a href="{{ $datas->url($datas->lastPage()) }}">
+                            <button class="tabel-nomor">&gt;&gt;</button>
+                        </a>
+                        @endif
+
+                        @if ($datas->currentPage() != $datas->lastPage())
+                        <a href="{{ $datas->nextPageUrl() }}">
+                            <button id="tabel-selanjutnya">
+                                Selanjutnya ->
+                            </button>
+                        </a>
+                        @endif
+                </div>
             </div>
         </div>
 
-
-    </div>
-
-    <div class="form-peminjaman">
-        <div class="peminjaman-contents">
-            <h1 class="underline">Form Peminjaman</h1>
-            <div>
-                <div class="display-flex-between">
-                    <h3 class="teks-peminjaman">Nama</h3>
-                    <h3 class="teks-peminjaman">:</h3>
-                    <input class="isian-peminjaman" type="text" placeholder="Nama Peminjam">
+        <div class="form-peminjaman">
+            <div class="peminjaman-contents">
+                <h1 class="underline">Form Peminjaman</h1>
+                <div>
+                    <div class="display-flex-between">
+                        <h3 class="teks-peminjaman">Nama</h3>
+                        <h3 class="teks-peminjaman">:</h3>
+                        <input class="isian-peminjaman" type="text" placeholder="Nama Peminjam" name="nama">
+                    </div>
+                    <div class="display-flex-between">
+                        <h3 class="teks-peminjaman">NIP</h3>
+                        <h3 class="teks-peminjaman">:</h3>
+                        <input class="isian-peminjaman" type="text" placeholder="Nomor Induk Pegawai" name="nip">
+                    </div>
+                    <div class="display-flex-between">
+                        <h3 class="teks-peminjaman">Email</h3>
+                        <h3 class="teks-peminjaman">:</h3>
+                        <input class="isian-peminjaman" type="text" placeholder="kejatijateng123@gmail.com"
+                            name="email">
+                    </div>
+                    <div class="display-flex-between">
+                        <h3 class="teks-peminjaman">No HP</h3>
+                        <h3 class="teks-peminjaman">:</h3>
+                        <input class="isian-peminjaman" type="text" placeholder="08xxxxxxxxxxx" name="telepon">
+                    </div>
                 </div>
-                <div class="display-flex-between">
-                    <h3 class="teks-peminjaman">NIP</h3>
-                    <h3 class="teks-peminjaman">:</h3>
-                    <input class="isian-peminjaman" type="text" placeholder="Nomor Induk Pegawai">
+                <div id="kirim-placement">
+                    <a href="/pinjam">
+                        <button type="submit" id="kirim-peminjaman">Kirim</button>
+                    </a>
                 </div>
-                <div class="display-flex-between">
-                    <h3 class="teks-peminjaman">Email</h3>
-                    <h3 class="teks-peminjaman">:</h3>
-                    <input class="isian-peminjaman" type="text" placeholder="kejatijateng123@gmail.com">
-                </div>
-                <div class="display-flex-between">
-                    <h3 class="teks-peminjaman">No HP</h3>
-                    <h3 class="teks-peminjaman">:</h3>
-                    <input class="isian-peminjaman" type="text" placeholder="08xxxxxxxxxxx">
-                </div>
-            </div>
-            <div id="kirim-placement">
-                <a href='/'>
-                    <button id="kirim-peminjaman">Kirim</button>
-                </a>
-
             </div>
         </div>
+</form>
 
-
-    </div>
-
-    <script>
-        document.getElementById("selectform").addEventListener("reset", function (event) {
+{{-- <script>
+    document.getElementById("selectform").addEventListener("reset", function (event) {
             event.preventDefault();
             window.location.href = '/peminjamanpage';
         });
-    </script>
-    @endsection
+</script> --}}
+@endsection

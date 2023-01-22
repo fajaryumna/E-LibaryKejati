@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\Peminjaman;
+use App\Models\Buku;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Buku extends Model
+class Peminjaman extends Model
 {
     use HasFactory;
-    protected $table = 'buku';
+    protected $table = 'peminjaman';
     protected $guarded = [];
 
-    public function peminjaman(){
-        return $this->hasMany(Peminjaman::class);
+    public function buku(){
+        return $this->belongsTo(Buku::class);
     }
 }
