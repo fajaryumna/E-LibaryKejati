@@ -239,9 +239,12 @@
 
         #bottom-right {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            width: 45%;
+            width: fit-content;
+        }
+        #bottom-right a, #bottom-right p{
+            margin: 5px 5px;
         }
 
         .tabel-nomor {
