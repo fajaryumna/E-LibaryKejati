@@ -11,6 +11,7 @@ class PeminjamanController extends Controller
 {
     public function store_peminjaman(Request $request){
         
+        // validasi data
         $data = $request->validate([
             'nama' => 'required',
             'nip' => 'required',
@@ -19,17 +20,9 @@ class PeminjamanController extends Controller
             'buku_id' => 'required'
         ]);
 
-        // $peminjaman = new Peminjaman();
-        // $peminjaman->nama = $data['nama'];
-        // $peminjaman->nip = $data['nip'];
-        // $peminjaman->email = $data['email'];
-        // $peminjaman->telepon = $data['telepon'];
-        // $peminjaman->tanggal_pinjam = now();
-        // $peminjaman->tanggal_pengembalian = now()->addDays(14);
-        // $peminjaman->save();
-
         // $peminjaman->buku()->attach($request->buku_id);
-    
+        
+        // store data
         foreach ($data['buku_id'] as $buku_id) {
             $peminjaman = new Peminjaman();
             $peminjaman->nama = $data['nama'];
@@ -38,30 +31,22 @@ class PeminjamanController extends Controller
             $peminjaman->telepon = $data['telepon'];
             $peminjaman->tanggal_pinjam = now();
             $peminjaman->tanggal_pengembalian = now()->addDays(14);
+            $peminjaman->buku_id = intval($buku_id);
+            $peminjaman->save();
 
             $buku = Buku::find($buku_id);
             $buku->jumlah = $buku->jumlah - 1;           
             $buku->save();
-
-            $peminjaman->buku_id = $buku_id;
-            $peminjaman->save();
-            // $peminjaman->buku()->attach($peminjaman);
         }
-        // $peminjaman->buku_id = $data['buku_id'];
-        // $peminjaman->save();
 
-        // dd($buku);
-        // dd($peminjaman);
+        // save id ke array
+        $buku_array = array();
+        foreach ($request->buku_id as $bukuid) {
+            $buku_array[] = $bukuid;
+        }
 
-
-        // dd($peminjaman);
-        // $buku = Book::whereIn('id', $data['book_id'])->get();
-
-        $pdf = PDF::loadView('user.invoicepage', compact('peminjaman','buku'))->setOptions(['defaultFont' => 'sans-serif']);
-        return $pdf->download('user.invoicepage');
-
-        // return redirect()->route('peminjamanpage');
-
-
+        $pdf = PDF::loadView('user.invoicepage', compact('peminjaman', 'buku_array'))->setOptions(['defaultFont' => 'Poppins']);
+        return $pdf->download('invoice.pdf');
+        return redirect()->route('peminjamanpage');
     }
 }

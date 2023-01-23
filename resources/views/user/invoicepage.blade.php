@@ -111,14 +111,31 @@
         <div class="display-flex-between invoice-table-contents">
             <h4 class="invoice-table-content invoice-table-judul">Tanggal Pinjam</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>{{ $peminjaman->tanggal_pinjam->format('D d M Y') }}</h4>
+                <h4>{{ $peminjaman->tanggal_pinjam->format('d M Y') }}</h4>
             </div>
         </div>
 
         <div class="display-flex-between invoice-table-contents even-item-invoice-table">
             <h4 class="invoice-table-content invoice-table-judul">Judul Buku / Lemari Buku</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>1. LEMBAGA PENINJAUAN KEMBALI (PK) PERKARA PIDANA / <span class='bold'>1A</span></h4>
+
+                @php
+                $nomor = 1;
+                @endphp
+
+                @foreach ($buku_array as $id_buku)
+                @php
+                $buku = App\Models\Buku::where('id', $id_buku)->get();
+                @endphp
+                @foreach ($buku as $bk)
+                <h4>{{ $nomor++ }} <span>. </span> {{ $bk->judul_buku }} / <span class='bold'>{{ $bk->no_rak }}</span>
+                </h4>
+                @endforeach
+
+                @endforeach
+
+
+                {{-- <h4>1. LEMBAGA PENINJAUAN KEMBALI (PK) PERKARA PIDANA / <span class='bold'>1A</span></h4>
                 <h4>2. DELIK DELIK KHUSUS KEJAHATAN MEMBAHAYAKAN KEPERCAYAAN UMUM TERHADAP SURAT, ALAT PEMBAYARAN, ALAT
                     BUKTI,DAN PERADILAN / <span class='bold'>2A</span></h4>
                 <h4>3. DARI TIADA PIDANA TANPA KESALAHAN MENUKU KEPADA TIADA PERTANGGUNGJAWABAN PIDANA TANPA KESALAHAN /
@@ -135,27 +152,29 @@
                 <h4>8. TERMINOLOGI HUKUM PIDANA / <span class='bold'>8D</span></h4>
                 <h4>9. LEMBAGA PIDANA BERSYARAT / <span class='bold'>9D</span></h4>
                 <h4>10. MASALAH PENEGAKAN HUKUM DAN KEBIJAKAN HUKUM PIDANA DALAM PENANGGULANGAN KEJAHATAN / <span
-                        class='bold'>10E</span></h4>
+                        class='bold'>10E</span></h4> --}}
             </div>
         </div>
 
         <div class="display-flex-between invoice-table-contents">
             <h4 class="invoice-table-content invoice-table-judul">Jumlah Buku</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>3</h4>
+                <h4>
+                    {{ count($buku_array) }}
+                </h4>
             </div>
         </div>
 
         <div class="display-flex-between invoice-table-contents even-item-invoice-table" id="invoice-table-judul">
             <h4 class="invoice-table-content invoice-table-judul">Batas Kembali</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>44 Februari 2020</h4>
+                <h4>{{ $peminjaman->tanggal_pengembalian->format('d M Y') }}</h4>
             </div>
         </div>
 
     </div>
     <div id="tanggal-invoice">
-        <h5>Semarang, 9 Januari 2023</h5>
+        <h5>Semarang, {{ $peminjaman->tanggal_pinjam->format('d M Y') }}</h5>
         <br>
         <h5>Kepala Perpustakaan</h5>
     </div>

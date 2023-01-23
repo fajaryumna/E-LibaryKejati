@@ -49,10 +49,10 @@ class BukuController extends Controller
         $tahun_terbit = $request->input('tahun_terbit');
         $jenis_buku = $request->input('jenis_buku');
 
-        $query = Buku::query();
+        $query = Buku::where('jumlah','>',0);
+        
         if (!empty($judul_buku)) {
             $query->where('judul_buku', 'like', '%'.$judul_buku.'%');
-            // dd($query);
         }
         if(!empty($nama_pengarang)){
             $query->where('nama_pengarang', 'like', '%'.$nama_pengarang.'%');

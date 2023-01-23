@@ -102,6 +102,7 @@
             @else
             <div class="display-flex-between even-buku">
                 @endif
+
                 <h4 class="juduls buku" id="no_buku">{{ $nomor++ }}</h4>
                 <h4 class="juduls buku">{{ $data->judul_buku }}</h4>
                 <h4 class="juduls buku">{{ $data->nama_pengarang }}</h4>
