@@ -243,7 +243,9 @@
             align-items: center;
             width: fit-content;
         }
-        #bottom-right a, #bottom-right p{
+
+        #bottom-right a,
+        #bottom-right p {
             margin: 5px 5px;
         }
 
@@ -381,9 +383,7 @@
 
         .footer-sosmed-logo {
 
-            border-radius: 100px;
-            background-color: #f6f6f6;
-            color: black;
+            /* border-radius: 100px; */
             width: 60px;
             height: 60px;
             border: none;
@@ -443,7 +443,6 @@
                 <div>
                     <a href='/mainpage'>
                         <img src="images/logo-kejati.png" width="40%">
-
                     </a>
                 </div>
                 <div class="top-right-contents">
@@ -510,14 +509,18 @@
                         <h3>Sosial Media</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><button
-                                class="footer-sosmed-logo">F</button></a>
-                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><button
-                                class="footer-sosmed-logo">T</button></a>
-                        <a href='https://www.instagram.com/kejatijateng' target="_blank"> <button
-                                class="footer-sosmed-logo">I</button></a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"> <button
-                                class="footer-sosmed-logo">Y</button></a>
+                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Facebook.png" alt="">
+                        </a>
+                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Twitter.png" alt="">
+                        </a>
+                        <a href='https://www.instagram.com/kejatijateng' target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Instagram.png" alt="">
+                        </a>
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Youtube.png" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
