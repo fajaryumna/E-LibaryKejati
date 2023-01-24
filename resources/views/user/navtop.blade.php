@@ -383,12 +383,11 @@
 
         .footer-sosmed-logo {
 
-            /* border-radius: 100px; */
+            border-radius: 50%;
             width: 60px;
             height: 60px;
-            border: none;
+            /* border: none; */
             margin: auto 5px;
-            font-weight: bolder;
         }
 
         /* Utility Classes */
@@ -479,7 +478,24 @@
                         <h3>Kantor Kami</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        MAP
+                        <div style="overflow:hidden;resize:none;max-width:100%;width:80%;height:350px;">
+                            <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
+                                <iframe
+                                    style="height:100%;width:100%;border:0;" frameborder="0"
+                                    src="https://www.google.com/maps/embed/v1/place?q=Kejaksaan+Tinggi+Jawa+Tengah,+Jalan+Pahlawan,+Pleburan,+Semarang+City,+Central+Java,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                            </div><a class="from-embedmap-code" rel="nofollow"
+                                href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap
+                                themes</a>
+                            <style>
+                                #embedded-map-display .text-marker {}
+
+                                .map-generator {
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                    background: none;
+                                }
+                            </style>
+                        </div>
                     </div>
 
                 </div>
@@ -510,16 +526,16 @@
                     </div>
                     <div class="bottom-footer-downer">
                         <a href="https://www.facebook.com/KejatiJateng/" target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Facebook.png" alt="">
+                            <img class="footer-sosmed-logo" src="images/Facebook.png" alt="Facebook">
                         </a>
                         <a href="https://mobile.twitter.com/kejati_jateng" target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Twitter.png" alt="">
+                            <img class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter">
                         </a>
                         <a href='https://www.instagram.com/kejatijateng' target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Instagram.png" alt="">
+                            <img class="footer-sosmed-logo" src="images/Instagram.png" alt="Instagram">
                         </a>
                         <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Youtube.png" alt="">
+                            <img class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube">
                         </a>
                     </div>
                 </div>
