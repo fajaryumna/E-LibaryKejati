@@ -42,7 +42,8 @@
         input,
         button,
         th,
-        td {
+        td,
+        p {
             font-family: 'Poppins';
         }
 
@@ -318,7 +319,7 @@
 
         /* FAQ */
         #pertanyaans {
-            margin: 100px auto;
+            margin: 100px 15%;
         }
 
         .pertanyaans {
@@ -480,8 +481,7 @@
                     <div class="bottom-footer-downer">
                         <div style="overflow:hidden;resize:none;max-width:100%;width:80%;height:350px;">
                             <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
-                                <iframe
-                                    style="height:100%;width:100%;border:0;" frameborder="0"
+                                <iframe style="height:100%;width:100%;border:0;" frameborder="0"
                                     src="https://www.google.com/maps/embed/v1/place?q=Kejaksaan+Tinggi+Jawa+Tengah,+Jalan+Pahlawan,+Pleburan,+Semarang+City,+Central+Java,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
                             </div><a class="from-embedmap-code" rel="nofollow"
                                 href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap
