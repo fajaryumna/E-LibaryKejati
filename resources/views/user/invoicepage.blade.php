@@ -101,6 +101,7 @@
             <h2 class="invoice-table-content" id="judul-invoice">DATA PEMINJAMAN</h2>
         </div>
 
+
         <div class="display-flex-between invoice-table-contents even-item-invoice-table">
             <h4 class="invoice-table-content invoice-table-judul">Nama Peminjam</h4>
             <div class="invoice-table-content invoice-table-isian">

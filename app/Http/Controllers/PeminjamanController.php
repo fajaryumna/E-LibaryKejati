@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use PDF;
+use session;
 use App\Models\Buku;
 use App\Models\Peminjaman;
-use PDF;
+use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Session;
 
 class PeminjamanController extends Controller
 {
@@ -21,6 +23,15 @@ class PeminjamanController extends Controller
         ]);
 
         // $peminjaman->buku()->attach($request->buku_id);
+
+        // Simpan ke dalam session
+        $request->session()->put('peminjaman', [
+            'nama' => $data['nama'],
+            'nip' => $data['nip'],
+            'telepon' => $data['telepon'],
+            'email' => $data['email'],
+            'buku_id' => $data['buku_id']
+        ]);
         
         // store data
         foreach ($data['buku_id'] as $buku_id) {
