@@ -51,7 +51,7 @@
     @csrf
     <div class="tabel-buku">
         <h5>Menampilkan
-            <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">10</button>
+            <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">{{ $datas->count() }}</button>
                 <span class="jumlah-buku-contents">
                     <a class="jumlah-buku-content" href="#">10</a>
                     <a class="jumlah-buku-content" href="#">20</a>
@@ -178,7 +178,8 @@
                     {{-- Tampilin page sekarang --}}
                     @if ($datas->lastPage() != 1)
                     <a href="{{ $datas->url($datas->currentPage()) }}">
-                        <button class="tabel-nomor" id="nomor-terpilih">{{ $datas->currentPage() }}</button>
+                        <button class="tabel-nomor" type="button" id="nomor-terpilih">{{ $datas->currentPage()
+                            }}</button>
                     </a>
                     @endif
 
@@ -268,11 +269,10 @@
                 </div>
             </div>
         </div>
-
 </form>
 
 <script>
-    document.getElementById("selectform").addEventListener("reset", function (event) {
+    document.getElementById("selectform").addEventListener("reset", function(event) {
             event.preventDefault();
             window.location.href = '/peminjamanpage';
         });

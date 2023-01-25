@@ -1,94 +1,125 @@
 @extends('user.navtop')
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
     <h2 class="koleksi-buku-text">
         FREQUENTLY
         <span class="teks-ungu">ASKED QUESTIONS</span>
     </h2>
 
     <div id="pertanyaans">
-        {{-- <div class="display-flex-between pertanyaans">
-            <h4>Apa itu Kejaksaan Tinggi Jawa Tengah?</h4>
-            <div class="material-symbols-outlined">add</div>
-        </div>
-        <div class="display-flex-between pertanyaans">
-            <h4>Apa itu Kejaksaan Tinggi Jawa Tengah?</h4>
-            <div class="material-symbols-outlined">add</div>
-        </div>
-        <div class="display-flex-between pertanyaans">
-            <h4>Apa itu Kejaksaan Tinggi Jawa Tengah?</h4>
-            <div class="material-symbols-outlined">add</div>
-        </div>
-        <div class="display-flex-between pertanyaans">
-            <h4>Apa itu Kejaksaan Tinggi Jawa Tengah?</h4>
-            <div class="material-symbols-outlined">add</div>
-        </div> --}}
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne">
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                    aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-                        plugin adds the appropriate classes that we use to style each element. These classes control the
-                        overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
-                        this with custom CSS or overriding our default variables. It's also worth noting that just about any
-                        HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo">
-                        Accordion Item #2
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit
-                        overflow.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">
-                        Accordion Item #3
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                    aria-labelledby="panelsStayOpen-headingThree">
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit
-                        overflow.
-                    </div>
-                </div>
+        {{-- Style for accordion --}}
+        <style>
+            /* Style the buttons that are used to open and close the accordion panel */
+            .accordion {
+                background-color: #d9d9d9;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                text-align: left;
+                border: none;
+                outline: none;
+                transition: 0.4s;
+                font-size: large;
+                font-weight: 900;
+            }
+
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+            .active,
+            .accordion:hover {
+                background-color: #ccc;
+            }
+
+            /* Style the accordion panel. Note: hidden by default */
+            .panel {
+                padding: 16px 7%;
+                background-color: #d9d9d9;
+                display: none;
+                overflow: hidden;
+            }
+
+            .accordion-item{
+                margin-bottom: 20px;
+            }
+        </style>
+        {{-- Acccordion --}}
+        <div class="accordion-item">
+            <button class="accordion">PEMINJAMAN</button>
+            <div class="panel">
+                <p>Alur Peminjaman
+                    1. Peminjaman dapat dilakukan dengan mengisi form peminjaman pada tab “PEMINJAMAN”
+                    2. Setelah selesai mengisi form, klik “kirim”
+                    3. Akan muncul invoice yang harus kita tunjukkan pada petugas perpustakaan kejati.
+                    Catatan:
+                    Jumlah buku yang dapat dipinjam maksimal sebanyak 10 (sepuluh) buku.</p>
             </div>
         </div>
+
+        <div class="accordion-item">
+            <button class="accordion">MASA PEMINJAMAN</button>
+            <div class="panel">
+                <p>Lama peminjaman buku berlaku 14 (empat belas) hari. Apabila peminjam masih memerlukan koleksi tersebut,
+                    dapat
+                    memperpanjang masa peminjaman untuk 7 (tujuh) hari berkutnya dengan menghubungi petugas perpustakaan
+                    kejati.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion">PENGEMBALIAN PEMINJAMAN BUKU</button>
+            <div class="panel">
+                <p>Alur Pengembalian
+                    1. Pengembalian hanya bisa dilakukan secara offline dengan mendatangi langsung perpustakaan kejati.
+                    2. Pengembalian buku pada petugas piket perpustakaan kejati.
+                    3. Harap mengecek kelengkapan buku yang hendak dikembalikan.
+                    Catatan:
+                    Buku yang hilang, rusak atau terlambat dikembalikan akan dikenai denda sesuai aturan yang berlaku..</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion">DENDA KETERLAMBATAN</button>
+            <div class="panel">
+                <p>Apabila peminjam terlambat mengembalikan buku, maka akan dikenai denda yang ditentukan oleh
+                    atasan langsung perpustakaan atau sekurang-kurangnya pejabat eselon III.
+
+                    Peminjam yang belum mengembalikan pinjamannya tidak diperkenankan untuk melakukan peminjaman lagi,
+                    sampai
+                    dikembalikannya koleksi tersebut dan denda harus dibayar lunas.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion">BUKU HILANG</button>
+            <div class="panel">
+                <p>Apabila peminjam menghilangkan buku yang dipinjam, maka harus mengembalikan atau mengganti dengan buku
+                    yang
+                    sama.</p>
+            </div>
+        </div>
+
+        {{-- Script for accordion --}}
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
+
+                    /* Toggle between hiding and showing the active panel */
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        </script>
+        {{-- Accordion done --}}
 
 
     </div>

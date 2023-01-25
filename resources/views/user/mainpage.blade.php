@@ -52,7 +52,7 @@
 
         <div class="tabel-buku">
             <h5>Menampilkan
-                <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">10</button>
+                <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">{{$datas->count()}}</button>
                     <span class="jumlah-buku-contents">
                         <a class="jumlah-buku-content" href="#">10</a>
                         <a class="jumlah-buku-content" href="#">20</a>

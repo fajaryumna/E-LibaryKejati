@@ -12,6 +12,22 @@
             font-family: 'Poppins';
         }
 
+        h4 {
+            font-weight: lighter
+        }
+
+        tr {
+            margin: 20px auto 20px auto;
+        }
+
+        th {
+            width: 25%;
+        }
+
+        td {
+            width: 60%;
+        }
+
         /* Invoice Page */
         .invoice-text {
             text-align: center;
@@ -31,13 +47,20 @@
             border-radius: 10px;
         }
 
-        .invoice-table-contents,
-        tr {
-            width: 100%;
-            margin: 0px;
+        table {
+            border: 2px solid #d9d9d9;
+            border-collapse: collapse;
+            border-radius: 20px;
+            margin: 20px 10%;
+            padding: 0;
+            width: 80%;
         }
 
-        #invoice-table-judul {
+        .even-table {
+            background-color: #d9d9d9;
+        }
+
+        #table-bawah {
             border-radius: 0 0 7px 7px;
         }
 
@@ -47,29 +70,6 @@
             text-align: center;
         }
 
-        .invoice-table-content,
-        div.invoice-table-content h4 {
-            margin: 3px 7px;
-            font-weight: lighter;
-
-        }
-
-        .invoice-table-judul,
-        th {
-            width: 30%;
-            text-align: center;
-        }
-
-        .invoice-table-isian,
-        td {
-            width: 70%;
-            text-align: start;
-        }
-
-        .even-item-invoice-table {
-            background-color: #d9d9d9;
-        }
-
         #tanggal-invoice {
             display: flex;
             flex-direction: column;
@@ -77,11 +77,6 @@
             margin: 5px 10%;
         }
 
-        .display-flex-between {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
         .bold {
             font-weight: bold;
@@ -101,18 +96,37 @@
             <h2 class="invoice-table-content" id="judul-invoice">DATA PEMINJAMAN</h2>
         </div>
 
-
-        <div class="display-flex-between invoice-table-contents even-item-invoice-table">
+        @foreach ($buku_array as $id_buku)
+        @php
+        $buku = App\Models\Buku::where('id', $id_buku)->get();
+        @endphp
+        @foreach ($buku as $bk)
+        <h4>{{ $nomor++ }} <span>. </span> {{ $bk->judul_buku }} / <span class='bold'>{{ $bk->no_rak }}</span>
+        </h4>
+        @endforeach
+        @endforeach
+        </td>
+        </tr>
+        <tr>
+            <th>Jumlah Buku</th>
+            <td>{{ count($buku_array) }}</td>
+        </tr>
+        <tr class="even-table" id="table-bawah">
+            <th>Batas Kembali</th>
+            <td>{{ $peminjaman->tanggal_pengembalian->format('d M Y') }}</td>
+        </tr>
+        </table>
+        {{-- <div class="display-flex-between invoice-table-contents even-item-invoice-table">
             <h4 class="invoice-table-content invoice-table-judul">Nama Peminjam</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>{{ $peminjaman->nama }}</h4>
+                <h4>{{ $peminjaman->nama }}</h4>Fulan
             </div>
         </div>
 
         <div class="display-flex-between invoice-table-contents">
             <h4 class="invoice-table-content invoice-table-judul">Tanggal Pinjam</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>{{ $peminjaman->tanggal_pinjam->format('d M Y') }}</h4>
+                <h4>{{ $peminjaman->tanggal_pinjam->format('d M Y') }}</h4> dmy
             </div>
         </div>
 
@@ -132,11 +146,10 @@
                 <h4>{{ $nomor++ }} <span>. </span> {{ $bk->judul_buku }} / <span class='bold'>{{ $bk->no_rak }}</span>
                 </h4>
                 @endforeach
-
                 @endforeach
 
 
-                {{-- <h4>1. LEMBAGA PENINJAUAN KEMBALI (PK) PERKARA PIDANA / <span class='bold'>1A</span></h4>
+                <h4>1. LEMBAGA PENINJAUAN KEMBALI (PK) PERKARA PIDANA / <span class='bold'>1A</span></h4>
                 <h4>2. DELIK DELIK KHUSUS KEJAHATAN MEMBAHAYAKAN KEPERCAYAAN UMUM TERHADAP SURAT, ALAT PEMBAYARAN, ALAT
                     BUKTI,DAN PERADILAN / <span class='bold'>2A</span></h4>
                 <h4>3. DARI TIADA PIDANA TANPA KESALAHAN MENUKU KEPADA TIADA PERTANGGUNGJAWABAN PIDANA TANPA KESALAHAN /
@@ -153,7 +166,7 @@
                 <h4>8. TERMINOLOGI HUKUM PIDANA / <span class='bold'>8D</span></h4>
                 <h4>9. LEMBAGA PIDANA BERSYARAT / <span class='bold'>9D</span></h4>
                 <h4>10. MASALAH PENEGAKAN HUKUM DAN KEBIJAKAN HUKUM PIDANA DALAM PENANGGULANGAN KEJAHATAN / <span
-                        class='bold'>10E</span></h4> --}}
+                        class='bold'>10E</span></h4>
             </div>
         </div>
 
@@ -161,7 +174,7 @@
             <h4 class="invoice-table-content invoice-table-judul">Jumlah Buku</h4>
             <div class="invoice-table-content invoice-table-isian">
                 <h4>
-                    {{ count($buku_array) }}
+                    {{ count($buku_array) }} 100
                 </h4>
             </div>
         </div>
@@ -169,16 +182,15 @@
         <div class="display-flex-between invoice-table-contents even-item-invoice-table" id="invoice-table-judul">
             <h4 class="invoice-table-content invoice-table-judul">Batas Kembali</h4>
             <div class="invoice-table-content invoice-table-isian">
-                <h4>{{ $peminjaman->tanggal_pengembalian->format('d M Y') }}</h4>
+                <h4>{{ $peminjaman->tanggal_pengembalian->format('d M Y') }}</h4> dmy
             </div>
-        </div>
+        </div> --}}
 
-    </div>
-    <div id="tanggal-invoice">
-        <h5>Semarang, {{ $peminjaman->tanggal_pinjam->format('d M Y') }}</h5>
-        <br>
-        <h5>Kepala Perpustakaan</h5>
-    </div>
+        <div id="tanggal-invoice">
+            <h5>Semarang, {{ $peminjaman->tanggal_pinjam->format('d M Y') }}</h5>
+            <br>
+            <h5>Kepala Perpustakaan</h5>
+        </div>
 </body>
 
 </html>

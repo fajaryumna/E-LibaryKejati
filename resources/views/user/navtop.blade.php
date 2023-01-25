@@ -42,7 +42,8 @@
         input,
         button,
         th,
-        td {
+        td,
+        p {
             font-family: 'Poppins';
         }
 
@@ -243,7 +244,9 @@
             align-items: center;
             width: fit-content;
         }
-        #bottom-right a, #bottom-right p{
+
+        #bottom-right a,
+        #bottom-right p {
             margin: 5px 5px;
         }
 
@@ -316,7 +319,7 @@
 
         /* FAQ */
         #pertanyaans {
-            margin: 100px auto;
+            margin: 100px 15%;
         }
 
         .pertanyaans {
@@ -381,14 +384,11 @@
 
         .footer-sosmed-logo {
 
-            border-radius: 100px;
-            background-color: #f6f6f6;
-            color: black;
+            border-radius: 50%;
             width: 60px;
             height: 60px;
-            border: none;
+            /* border: none; */
             margin: auto 5px;
-            font-weight: bolder;
         }
 
         /* Utility Classes */
@@ -443,7 +443,6 @@
                 <div>
                     <a href='/mainpage'>
                         <img src="images/logo-kejati.png" width="40%">
-
                     </a>
                 </div>
                 <div class="top-right-contents">
@@ -480,7 +479,23 @@
                         <h3>Kantor Kami</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        MAP
+                        <div style="overflow:hidden;resize:none;max-width:100%;width:80%;height:350px;">
+                            <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
+                                <iframe style="height:100%;width:100%;border:0;" frameborder="0"
+                                    src="https://www.google.com/maps/embed/v1/place?q=Kejaksaan+Tinggi+Jawa+Tengah,+Jalan+Pahlawan,+Pleburan,+Semarang+City,+Central+Java,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                            </div><a class="from-embedmap-code" rel="nofollow"
+                                href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap
+                                themes</a>
+                            <style>
+                                #embedded-map-display .text-marker {}
+
+                                .map-generator {
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                    background: none;
+                                }
+                            </style>
+                        </div>
                     </div>
 
                 </div>
@@ -510,14 +525,18 @@
                         <h3>Sosial Media</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><button
-                                class="footer-sosmed-logo">F</button></a>
-                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><button
-                                class="footer-sosmed-logo">T</button></a>
-                        <a href='https://www.instagram.com/kejatijateng' target="_blank"> <button
-                                class="footer-sosmed-logo">I</button></a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"> <button
-                                class="footer-sosmed-logo">Y</button></a>
+                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter">
+                        </a>
+                        <a href='https://www.instagram.com/kejatijateng' target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Instagram.png" alt="Instagram">
+                        </a>
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank">
+                            <img class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube">
+                        </a>
                     </div>
                 </div>
             </div>
