@@ -89,9 +89,7 @@
                 <h5 class="juduls ">Jenis Buku <span class="material-symbols-outlined">
                         unfold_more
                     </span></h5>
-                <h5 class="juduls ">Pinjam <span class="material-symbols-outlined">
-                        check_box
-                    </span></h5>
+                <h5 class="juduls ">Pinjam <img src="images/Checkbox.png" width="15px"></h5>
 
         </div>
         <hr color="black" width="100%" size="1px">
