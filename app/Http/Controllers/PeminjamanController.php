@@ -25,13 +25,16 @@ class PeminjamanController extends Controller
         // $peminjaman->buku()->attach($request->buku_id);
 
         // Simpan ke dalam session
-        $request->session()->put('peminjaman', [
-            'nama' => $data['nama'],
-            'nip' => $data['nip'],
-            'telepon' => $data['telepon'],
-            'email' => $data['email'],
-            'buku_id' => $data['buku_id']
-        ]);
+        // $request->session()->put('peminjaman', [
+        //     'nama' => $data['nama'],
+        //     'nip' => $data['nip'],
+        //     'telepon' => $data['telepon'],
+        //     'email' => $data['email'],
+        //     'buku_id' => $data['buku_id']
+        // ]);
+
+        // $book_id = json_decode(session()->get('book_ids'));
+
         
         // store data
         foreach ($data['buku_id'] as $buku_id) {

@@ -110,8 +110,8 @@
                 <h4 class="juduls buku text-center">{{ $data->tahun_terbit }}</h4>
                 <h4 class="juduls buku" id="no_buku">{{ $data->jumlah }}</h4>
                 <h4 class="juduls buku text-center">{{ $data->jenis_buku }}</h4>
-                <input class="juduls buku" type="checkbox" id="{{ $data->id }}" name="buku_id[]"
-                    value="{{ $data->id }}">
+                <input class="juduls buku" type="checkbox" id="{{ $data->id }}" name="buku_id[]" value="{{ $data->id }}"
+                    class="checkbox">
 
             </div>
             @endforeach
