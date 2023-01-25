@@ -479,13 +479,11 @@
                         <h3>Kantor Kami</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        <div style="overflow:hidden;resize:none;max-width:100%;width:80%;height:350px;">
+                        <div style="overflow:hidden;resize:none;max-width:100%;width:80%;height:300px;">
                             <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
                                 <iframe style="height:100%;width:100%;border:0;" frameborder="0"
                                     src="https://www.google.com/maps/embed/v1/place?q=Kejaksaan+Tinggi+Jawa+Tengah,+Jalan+Pahlawan,+Pleburan,+Semarang+City,+Central+Java,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-                            </div><a class="from-embedmap-code" rel="nofollow"
-                                href="https://www.bootstrapskins.com/themes" id="enable-map-data">premium bootstrap
-                                themes</a>
+                            </div>
                             <style>
                                 #embedded-map-display .text-marker {}
 
@@ -525,18 +523,10 @@
                         <h3>Sosial Media</h3>
                     </div>
                     <div class="bottom-footer-downer">
-                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Facebook.png" alt="Facebook">
-                        </a>
-                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter">
-                        </a>
-                        <a href='https://www.instagram.com/kejatijateng' target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Instagram.png" alt="Instagram">
-                        </a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank">
-                            <img class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube">
-                        </a>
+                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><img class="footer-sosmed-logo" src="images/Facebook.png" alt="Facebook"></a>
+                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><img class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter"></a>
+                        <a href='https://www.instagram.com/kejatijateng' target="_blank"><img class="footer-sosmed-logo" src="images/Instagram.png" alt="Instagram"></a>
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"><img class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube"></a>
                     </div>
                 </div>
             </div>
