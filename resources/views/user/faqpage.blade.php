@@ -52,7 +52,7 @@
                     <br> 2. Setelah selesai mengisi form, klik “kirim”
                     <br> 3. Akan muncul invoice yang harus kita tunjukkan pada petugas perpustakaan kejati.
                     <br> Catatan:
-                    <br> Jumlah buku yang dapat dipinjam maksimal sebanyak 10 (sepuluh) buku.
+                    <br> Jumlah buku yang dapat dipinjam maksimal sebanyak 3 (tiga) buku.
                 </p>
             </div>
         </div>

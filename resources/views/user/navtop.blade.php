@@ -59,11 +59,11 @@
             margin: inherit;
             color: black;
             background-color: #f6f6f699;
-            padding: 10px 5% 10px 5%;
+            padding: 10px 3%;
         }
 
         .top-right-contents {
-            width: 50%;
+            width: 35%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -73,6 +73,8 @@
         .top-right-content {
             margin: auto 10px auto 10%;
             color: black;
+            text-decoration: none;
+            font-size: medium;
         }
 
 
@@ -80,7 +82,7 @@
             font-size: xx-large;
             font-weight: 900;
             text-align: center;
-            margin-top: 20px
+            margin-top: 50px
         }
 
         .text-pencarian {
@@ -103,11 +105,13 @@
         .search-text {
             text-align: start;
             margin: 5% 0;
+            font-weight: 500
         }
 
         .search-field {
             width: 100%;
             height: 30px;
+            border: 1px solid black;
             border-radius: 10px;
             box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
             padding-left: 10px;
@@ -117,20 +121,27 @@
             display: flex;
             justify-content: start;
             align-items: center;
-            margin: 20px 10%;
+            margin: 30px 10%;
         }
 
         .search-button {
-            padding: 10px 30px;
+            /* padding: 7px 25px; */
+            width: 80px;
+            height: 30px;
             margin: auto 15px auto 0;
             border-radius: 10px;
             border: none;
-            font-size: medium;
-            font-weight: bold;
+            font-size: small;
+            /* font-weight: bold; */
         }
 
         #search-button-search {
             background-color: #d98e04;
+            color: #f6f6f6;
+        }
+
+        #search-button-search:hover {
+            background-color: rgb(121, 78, 0);
             color: #f6f6f6;
         }
 
@@ -180,7 +191,16 @@
         }
 
         .tabel-buku {
-            margin: 70px 10% 0 10%;
+            margin: 40px 10% 0 10%;
+        }
+
+        h3.daftar-buku,
+        h6.menampilkan-buku {
+            margin: 0;
+        }
+
+        h6.menampilkan-buku {
+            font-weight: lighter
         }
 
         .juduls {
@@ -213,6 +233,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: small;
         }
 
         /* Peminjaman buku */
@@ -260,6 +281,14 @@
             background-color: #d9d9d9;
             padding: 5px 10px;
             border-radius: 5px;
+        }
+
+        #tabel-kembali{
+            background-color: #d9d9d9;
+            padding: 7px 60px;
+            color: black;
+            border: none;
+            border-radius: 10px;
         }
 
         #tabel-selanjutnya {
@@ -358,11 +387,11 @@
 
         .bottom-footer {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
         .bottom-footer-content {
-            width: 50%;
+            width: 40%;
         }
 
         .bottom-footer-upper {
@@ -385,10 +414,10 @@
         .footer-sosmed-logo {
 
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 45px;
+            height: 45px;
             /* border: none; */
-            margin: auto 5px;
+            margin: auto 2px;
         }
 
         /* Utility Classes */
@@ -442,7 +471,7 @@
             <div class="text-shadow display-flex-between">
                 <div>
                     <a href='/mainpage'>
-                        <img src="images/logo-kejati.png" width="40%">
+                        <img src="images/logo-kejati.png" width="35%">
                     </a>
                 </div>
                 <div class="top-right-contents">
@@ -468,18 +497,18 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Kejaksaan_Agung_Republik_Indonesia_new_logo.png"
                     width="7%">
                 <div id="judul-footer">
-                    <h2>Kejaksaan Tinggi Jawa Tengah</h2>
-                    <h4>"Menjadi Lembaga Penegak Hukum yang Profesional, Proporsional, dan Akuntabel"</h4>
+                    <h3>Kejaksaan Tinggi Jawa Tengah</h3>
+                    <h5>"Menjadi Lembaga Penegak Hukum yang Profesional, Proporsional, dan Akuntabel"</h5>
                 </div>
             </div>
             <hr color="#d98e04" width="100%" size="2px">
             <div class="bottom-footer">
                 <div class="bottom-footer-content">
                     <div class="bottom-footer-upper">
-                        <h3>Kantor Kami</h3>
+                        <h4>Kantor Kami</h4>
                     </div>
                     <div class="bottom-footer-downer">
-                        <div style="overflow:hidden;resize:none;max-width:100%;width:80%;height:300px;">
+                        <div style="overflow:hidden;resize:none;max-width:100%;width:70%;height:250px;">
                             <div id="embedded-map-display" style="height:100%; width:100%;max-width:100%;">
                                 <iframe style="height:100%;width:100%;border:0;" frameborder="0"
                                     src="https://www.google.com/maps/embed/v1/place?q=Kejaksaan+Tinggi+Jawa+Tengah,+Jalan+Pahlawan,+Pleburan,+Semarang+City,+Central+Java,+Indonesia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
@@ -499,34 +528,38 @@
                 </div>
                 <div class="bottom-footer-content">
                     <div class="bottom-footer-upper">
-                        <h3>Kontak</h3>
+                        <h4>Kontak</h4>
                     </div>
                     <div class="bottom-footer-downer">
-                        <h4 class="footer-kontak">Alamat</h4>
-                        <h5 class="footer-kontak-content">Jl. Pahlawan No.14, Pleburan, Kec. Semarang Sel., Kota
+                        <h5 class="footer-kontak">Alamat</h5>
+                        <h6 class="footer-kontak-content">Jl. Pahlawan No.14, Pleburan, Kec. Semarang Sel., Kota
                             Semarang, Jawa Tengah 50241
-                        </h5>
-                        <h4 class="footer-kontak">Telepon</h4>
-                        <h5 class="footer-kontak-content">(024)8413-985</h5>
-                        <h4 class="footer-kontak">Fax</h4>
-                        <h5 class="footer-kontak-content">(024)8311-850</h5>
-                        <h4 class="footer-kontak">Website</h4>
-                        <h5 class="footer-kontak-content">
+                        </h6>
+                        <h5 class="footer-kontak">Telepon</h5>
+                        <h6 class="footer-kontak-content">(024)8413-985</h6>
+                        <h5 class="footer-kontak">Fax</h5>
+                        <h6 class="footer-kontak-content">(024)8311-850</h6>
+                        <h5 class="footer-kontak">Website</h5>
+                        <h6 class="footer-kontak-content">
                             <a href="https://kejati-jawatengah.kejaksaan.go.id" target="_blank">
                                 https://kejati-jawatengah.kejaksaan.go.id
                             </a>
-                        </h5>
+                        </h6>
                     </div>
                 </div>
                 <div class="bottom-footer-content">
                     <div class="bottom-footer-upper">
-                        <h3>Sosial Media</h3>
+                        <h4>Sosial Media</h4>
                     </div>
                     <div class="bottom-footer-downer">
-                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><img class="footer-sosmed-logo" src="images/Facebook.png" alt="Facebook"></a>
-                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><img class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter"></a>
-                        <a href='https://www.instagram.com/kejatijateng' target="_blank"><img class="footer-sosmed-logo" src="images/Instagram.png" alt="Instagram"></a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"><img class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube"></a>
+                        <a href="https://www.facebook.com/KejatiJateng/" target="_blank"><img class="footer-sosmed-logo"
+                                src="images/Facebook.png" alt="Facebook"></a>
+                        <a href="https://mobile.twitter.com/kejati_jateng" target="_blank"><img
+                                class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter"></a>
+                        <a href='https://www.instagram.com/kejatijateng' target="_blank"><img class="footer-sosmed-logo"
+                                src="images/Instagram.png" alt="Instagram"></a>
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah3021' target="_blank"><img
+                                class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube"></a>
                     </div>
                 </div>
             </div>

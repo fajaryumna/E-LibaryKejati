@@ -51,41 +51,46 @@
         </div>
 
         <div class="tabel-buku">
-            <h5>Menampilkan
-                <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">{{$datas->count()}}</button>
-                    <span class="jumlah-buku-contents">
-                        <a class="jumlah-buku-content" href="#">10</a>
-                        <a class="jumlah-buku-content" href="#">20</a>
-                        <a class="jumlah-buku-content" href="#">50</a>
-                        <a class="jumlah-buku-content" href="#">100</a>
-                    </span></span> data
-            </h5>
+            <h3 class="daftar-buku">Daftar Buku</h3>
+            <div class="display-flex-between ">
+                <h3></h3>
+                <h6 class="menampilkan-buku">Menampilkan
+                    <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">{{ $datas->count() }}</button>
+                        <span class="jumlah-buku-contents">
+                            <a class="jumlah-buku-content" href="#">10</a>
+                            <a class="jumlah-buku-content" href="#">20</a>
+                            <a class="jumlah-buku-content" href="#">50</a>
+                            <a class="jumlah-buku-content" href="#">100</a>
+                        </span></span> data
+                </h6>
+            </div>
+
             <div class="display-flex-between">
-                <h4 class="juduls " id="no_buku">No
+                <h5 class="juduls " id="no_buku">No
                     <span class="material-symbols-outlined">
                         unfold_more
                     </span>
-                </h4>
-                <h4 class="juduls ">Judul Buku
+                </h5>
+                <h5 class="juduls ">Judul Buku
                     <span class="material-symbols-outlined">
                         unfold_more
                     </span>
-                </h4>
-                <h4 class="juduls ">Pengarang <span class="material-symbols-outlined">
+                </h5>
+                <h5 class="juduls ">Pengarang <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h4>
-                <h4 class="juduls ">Penerbit <span class="material-symbols-outlined">
+                    </span></h5>
+                <h5 class="juduls ">Penerbit <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h4>
-                <h4 class="juduls ">Tahun Terbit <span class="material-symbols-outlined">
+                    </span></h5>
+                <h5 class="juduls ">Tahun Terbit <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h4>
-                <h4 class="juduls " id="no_buku">Jumlah <span class="material-symbols-outlined">
+                    </span></h5>
+                <h5 class="juduls " id="no_buku">Jumlah <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h4>
-                <h4 class="juduls ">Jenis Buku <span class="material-symbols-outlined">
+                    </span></h5>
+                <h5 class="juduls ">Jenis Buku <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h4>
+                    </span></h5>
 
             </div>
             <hr color="black" width="100%" size="1px">
@@ -100,13 +105,13 @@
                     @else
                         <div class="display-flex-between even-buku">
                 @endif
-                <h4 class="juduls buku" id="no_buku">{{ $nomor++ }}</h4>
-                <h4 class="juduls buku">{{ $data->judul_buku }}</h4>
-                <h4 class="juduls buku">{{ $data->nama_pengarang }}</h4>
-                <h4 class="juduls buku text-center">{{ $data->penerbit }}</h4>
-                <h4 class="juduls buku text-center">{{ $data->tahun_terbit }}</h4>
-                <h4 class="juduls buku" id="no_buku">{{ $data->jumlah }}</h4>
-                <h4 class="juduls buku text-center">{{ $data->jenis_buku }}</h4>
+                <h5 class="juduls buku" id="no_buku">{{ $nomor++ }}</h5>
+                <h5 class="juduls buku">{{ $data->judul_buku }}</h5>
+                <h5 class="juduls buku">{{ $data->nama_pengarang }}</h5>
+                <h5 class="juduls buku text-center">{{ $data->penerbit }}</h5>
+                <h5 class="juduls buku text-center">{{ $data->tahun_terbit }}</h5>
+                <h5 class="juduls buku" id="no_buku">{{ $data->jumlah }}</h5>
+                <h5 class="juduls buku text-center">{{ $data->jenis_buku }}</h5>
         </div>
         @endforeach
 
@@ -128,7 +133,7 @@
                     </style> --}}
                     <a href="{{ $datas->previousPageUrl() }}">
                         <button id="tabel-sebelumnya">
-                            <- Sebelumnya </button>
+                            🡰 Sebelumnya </button>
                     </a>
                 @endif
 
@@ -149,22 +154,22 @@
                     <a href="{{ $datas->url($datas->currentPage() - 3) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() - 3 }}</button>
                     </a>
-                {{-- Sama kaya sebelumnya tapi -1 --}}
+                    {{-- Sama kaya sebelumnya tapi -1 --}}
                 @elseif ($datas->currentPage() == $datas->lastPage() - 1 && $datas->lastPage() >= 4)
-                    <a href="{{ $datas->url($datas->currentPage() -3) }}">
+                    <a href="{{ $datas->url($datas->currentPage() - 3) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() - 3 }}</button>
                     </a>
                 @endif
 
                 {{-- Tampilin prev page -2 kalo lagi di page lebih dari 3 --}}
-                @if ($datas->currentPage() >= 3 || $datas->currentPage() == $datas->lastPage() && $datas->lastPage() >= 3)
+                @if ($datas->currentPage() >= 3 || ($datas->currentPage() == $datas->lastPage() && $datas->lastPage() >= 3))
                     <a href="{{ $datas->url($datas->currentPage() - 2) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() - 2 }}</button>
                     </a>
                     <a href="{{ $datas->url($datas->currentPage() - 1) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
                     </a>
-                {{-- Kalo di page 2, tampilin prev pagenya 1 aja --}}
+                    {{-- Kalo di page 2, tampilin prev pagenya 1 aja --}}
                 @elseif ($datas->currentPage() == 2 && $datas->lastPage() >= 2)
                     <a href="{{ $datas->url($datas->currentPage() - 1) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
@@ -173,9 +178,9 @@
 
                 {{-- Tampilin page sekarang --}}
                 @if ($datas->lastPage() != 1)
-                <a href="{{ $datas->url($datas->currentPage()) }}">
-                    <button class="tabel-nomor" id="nomor-terpilih">{{ $datas->currentPage() }}</button>
-                </a>
+                    <a href="{{ $datas->url($datas->currentPage()) }}">
+                        <button class="tabel-nomor" id="nomor-terpilih">{{ $datas->currentPage() }}</button>
+                    </a>
                 @endif
 
                 {{-- Kalo next page cuman ada 1, munculinnya 1 aja --}}
@@ -183,7 +188,7 @@
                     <a href="{{ $datas->url($datas->currentPage() + 1) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
                     </a>
-                {{-- Sisanya normal aja nampilin 2 next page --}}
+                    {{-- Sisanya normal aja nampilin 2 next page --}}
                 @elseif ($datas->currentPage() != $datas->lastPage() && $datas->lastPage() >= 3)
                     <a href="{{ $datas->url($datas->currentPage() + 1) }}">
                         <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
@@ -219,7 +224,7 @@
                 @if ($datas->currentPage() != $datas->lastPage())
                     <a href="{{ $datas->nextPageUrl() }}">
                         <button id="tabel-selanjutnya">
-                            Selanjutnya ->
+                            Selanjutnya 🡲
                         </button>
                     </a>
                 @endif
