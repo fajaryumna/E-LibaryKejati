@@ -234,27 +234,27 @@
 
         <div class="form-peminjaman">
             <div class="peminjaman-contents">
-                <h1 class="underline">Form Peminjaman</h1>
+                <h2>Form <span class="teks-ungu">Peminjaman</span></h2>
                 <div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">Nama</h3>
-                        <h3 class="teks-peminjaman">:</h3>
+                        <h4 class="teks-peminjaman">Nama</h4>
+                        <h4 class="teks-peminjaman">:</h4>
                         <input class="isian-peminjaman" type="text" placeholder="Nama Peminjam" name="nama">
                     </div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">NIP</h3>
-                        <h3 class="teks-peminjaman">:</h3>
+                        <h4 class="teks-peminjaman">NIP</h4>
+                        <h4 class="teks-peminjaman">:</h4>
                         <input class="isian-peminjaman" type="text" placeholder="Nomor Induk Pegawai" name="nip">
                     </div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">Email</h3>
-                        <h3 class="teks-peminjaman">:</h3>
+                        <h4 class="teks-peminjaman">Email</h4>
+                        <h4 class="teks-peminjaman">:</h4>
                         <input class="isian-peminjaman" type="text" placeholder="kejatijateng123@gmail.com"
                             name="email">
                     </div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">No HP</h3>
-                        <h3 class="teks-peminjaman">:</h3>
+                        <h4 class="teks-peminjaman">No HP</h4>
+                        <h4 class="teks-peminjaman">:</h4>
                         <input class="isian-peminjaman" type="text" placeholder="08xxxxxxxxxxx" name="telepon">
                     </div>
                 </div>

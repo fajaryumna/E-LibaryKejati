@@ -1,6 +1,5 @@
 @extends('user.navtop')
 @section('content')
-
     <h2 class="koleksi-buku-text">
         FREQUENTLY
         <span class="teks-ungu">ASKED QUESTIONS</span>
@@ -21,6 +20,7 @@
                 transition: 0.4s;
                 font-size: large;
                 font-weight: 900;
+                transition: 0.4s;
             }
 
             /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -31,13 +31,15 @@
 
             /* Style the accordion panel. Note: hidden by default */
             .panel {
-                padding: 16px 7%;
+                padding: 0px 7%;
                 background-color: #d9d9d9;
-                display: none;
+                /* display: none; */
+                max-height: 0;
                 overflow: hidden;
+                transition: max-height 0.2s ease-out;
             }
 
-            .accordion-item{
+            .accordion-item {
                 margin-bottom: 20px;
             }
         </style>
@@ -46,11 +48,12 @@
             <button class="accordion">PEMINJAMAN</button>
             <div class="panel">
                 <p>Alur Peminjaman
-                    1. Peminjaman dapat dilakukan dengan mengisi form peminjaman pada tab “PEMINJAMAN”
-                    2. Setelah selesai mengisi form, klik “kirim”
-                    3. Akan muncul invoice yang harus kita tunjukkan pada petugas perpustakaan kejati.
-                    Catatan:
-                    Jumlah buku yang dapat dipinjam maksimal sebanyak 10 (sepuluh) buku.</p>
+                    <br> 1. Peminjaman dapat dilakukan dengan mengisi form peminjaman pada tab “PEMINJAMAN”
+                    <br> 2. Setelah selesai mengisi form, klik “kirim”
+                    <br> 3. Akan muncul invoice yang harus kita tunjukkan pada petugas perpustakaan kejati.
+                    <br> Catatan:
+                    <br> Jumlah buku yang dapat dipinjam maksimal sebanyak 10 (sepuluh) buku.
+                </p>
             </div>
         </div>
 
@@ -69,11 +72,12 @@
             <button class="accordion">PENGEMBALIAN PEMINJAMAN BUKU</button>
             <div class="panel">
                 <p>Alur Pengembalian
-                    1. Pengembalian hanya bisa dilakukan secara offline dengan mendatangi langsung perpustakaan kejati.
-                    2. Pengembalian buku pada petugas piket perpustakaan kejati.
-                    3. Harap mengecek kelengkapan buku yang hendak dikembalikan.
-                    Catatan:
-                    Buku yang hilang, rusak atau terlambat dikembalikan akan dikenai denda sesuai aturan yang berlaku..</p>
+                    <br> 1. Pengembalian hanya bisa dilakukan secara offline dengan mendatangi langsung perpustakaan kejati.
+                    <br> 2. Pengembalian buku pada petugas piket perpustakaan kejati.
+                    <br> 3. Harap mengecek kelengkapan buku yang hendak dikembalikan.
+                    <br> Catatan:
+                    <br> Buku yang hilang, rusak atau terlambat dikembalikan akan dikenai denda sesuai aturan yang berlaku..
+                </p>
             </div>
         </div>
 
@@ -105,16 +109,12 @@
 
             for (i = 0; i < acc.length; i++) {
                 acc[i].addEventListener("click", function() {
-                    /* Toggle between adding and removing the "active" class,
-                    to highlight the button that controls the panel */
                     this.classList.toggle("active");
-
-                    /* Toggle between hiding and showing the active panel */
                     var panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                        panel.style.display = "none";
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
                     } else {
-                        panel.style.display = "block";
+                        panel.style.maxHeight = panel.scrollHeight + "px";
                     }
                 });
             }

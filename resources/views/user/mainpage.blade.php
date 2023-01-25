@@ -4,31 +4,31 @@
         <div>
             <h2 class="koleksi-buku-text">KOLEKSI <span class="teks-ungu">BUKU</span></h2>
             <div class="text-center">
-                <h2 class="text-pencarian">PENCARIAN</h2>
+                <h3 class="text-pencarian">PENCARIAN</h3>
                 <form id="selectform" action="{{ route('mainpage') }}" method="GET">
                     <div class="search-fields" id="selectform">
                         <div class="searches">
-                            <h4 class="search-text">Judul Buku:</h4>
+                            <h5 class="search-text">Judul Buku:</h5>
                             <input class="search-field" id="judul-buku" name="judul_buku" type="text"
                                 value="{{ request('judul_buku') }}" placeholder="Judul Buku">
                         </div>
                         <div class="searches">
-                            <h4 class="search-text">Pengarang:</h4>
+                            <h5 class="search-text">Pengarang:</h5>
                             <input class="search-field" id="pengarang-buku" name="nama_pengarang" type="text"
                                 value="{{ request('nama_pengarang') }}" placeholder="Pengarang">
                         </div>
                         <div class="searches">
-                            <h4 class="search-text">Penerbit:</h4>
+                            <h5 class="search-text">Penerbit:</h5>
                             <input class="search-field" id="penerbit-buku" name="penerbit" type="text"
                                 value="{{ request('penerbit') }}" placeholder="Penerbit">
                         </div>
                         <div class="searches">
-                            <h4 class="search-text">Tahun Terbit:</h4>
+                            <h5 class="search-text">Tahun Terbit:</h5>
                             <input class="search-field" id="tahun-buku" name="tahun_terbit" type="text"
                                 value="{{ request('tahun_terbit') }}" placeholder="Tahun Terbit">
                         </div>
                         <div class="searches">
-                            <h4 class="search-text">Jenis Buku:</h4>
+                            <h5 class="search-text">Jenis Buku:</h5>
                             <input class="search-field" id="jenis-buku" name="jenis_buku" type="text"
                                 value="{{ request('jenis_buku') }}" placeholder="Jenis Buku">
                         </div>
