@@ -22,6 +22,7 @@ use App\Http\Controllers\PeminjamanController;
 //     return view('user.peminjamanpage');
 // });
 
+// Route::get('/', [BukuController::class, 'indexMain'])->name('main'); //show 
 Route::get('/mainpage', [BukuController::class, 'indexMain'])->name('mainpage'); //show 
 // Route::get('/mainpage/search', [BukuController::class, 'main_search'])->name('main_search'); //show 
 Route::get('/peminjamanpage', [BukuController::class, 'indexPeminjaman'])->name('peminjamanpage'); //show 
