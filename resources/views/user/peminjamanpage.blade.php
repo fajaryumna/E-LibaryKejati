@@ -130,7 +130,7 @@
                         }
                     </style> --}}
                     <a href="{{ $datas->previousPageUrl() }}">
-                        <button id="tabel-sebelumnya">
+                        <button id="tabel-sebelumnya" type="button">
                             <- Sebelumnya </button>
                     </a>
                     @endif
@@ -138,7 +138,7 @@
                     {{-- kalo di page yang ga nampilin page pertama, tampilin simbol untuk bisa akses page pertama --}}
                     @if ($datas->currentPage() >= 4)
                     <a href="{{ $datas->url(1) }}">
-                        <button class="tabel-nomor">
+                        <button class="tabel-nomor" type="button">
                             &lt;&lt;
                         </button>
                     </a>
@@ -147,31 +147,31 @@
                     {{-- kalo lagi di last page, tampilin prev page sampe -4 --}}
                     @if ($datas->currentPage() == $datas->lastPage() && $datas->lastPage() >= 5)
                     <a href="{{ $datas->url($datas->currentPage() - 4) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() - 4 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() - 4 }}</button>
                     </a>
                     <a href="{{ $datas->url($datas->currentPage() - 3) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() - 3 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() - 3 }}</button>
                     </a>
                     {{-- Sama kaya sebelumnya tapi -1 --}}
                     @elseif ($datas->currentPage() == $datas->lastPage() - 1 && $datas->lastPage() >= 4)
-                    <a href="{{ $datas->url($datas->currentPage() -3) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() - 3 }}</button>
+                    <a href="{{ $datas->url($datas->currentPage() - 3) }}">
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() - 3 }}</button>
                     </a>
                     @endif
 
                     {{-- Tampilin prev page -2 kalo lagi di page lebih dari 3 --}}
-                    @if ($datas->currentPage() >= 3 || $datas->currentPage() == $datas->lastPage() && $datas->lastPage()
-                    >= 3)
+                    @if ($datas->currentPage() >= 3 || ($datas->currentPage() == $datas->lastPage() &&
+                    $datas->lastPage() >= 3))
                     <a href="{{ $datas->url($datas->currentPage() - 2) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() - 2 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() - 2 }}</button>
                     </a>
                     <a href="{{ $datas->url($datas->currentPage() - 1) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() - 1 }}</button>
                     </a>
                     {{-- Kalo di page 2, tampilin prev pagenya 1 aja --}}
                     @elseif ($datas->currentPage() == 2 && $datas->lastPage() >= 2)
                     <a href="{{ $datas->url($datas->currentPage() - 1) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() - 1 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() - 1 }}</button>
                     </a>
                     @endif
 
@@ -186,44 +186,44 @@
                     {{-- Kalo next page cuman ada 1, munculinnya 1 aja --}}
                     @if ($datas->currentPage() == $datas->lastPage() - 1 && $datas->lastPage() >= 2)
                     <a href="{{ $datas->url($datas->currentPage() + 1) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() + 1 }}</button>
                     </a>
                     {{-- Sisanya normal aja nampilin 2 next page --}}
                     @elseif ($datas->currentPage() != $datas->lastPage() && $datas->lastPage() >= 3)
                     <a href="{{ $datas->url($datas->currentPage() + 1) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() + 1 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() + 1 }}</button>
                     </a>
                     <a href="{{ $datas->url($datas->currentPage() + 2) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() + 2 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() + 2 }}</button>
                     </a>
                     @endif
 
                     {{-- Kalo page 1, tampilin next page sampe +4 --}}
                     @if ($datas->currentPage() == 1 && $datas->lastPage() >= 4)
                     <a href="{{ $datas->url($datas->currentPage() + 3) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() + 3 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() + 3 }}</button>
                     </a>
                     <a href="{{ $datas->url($datas->currentPage() + 4) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() + 4 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() + 4 }}</button>
                     </a>
                     {{-- Kalo page 2, tampilin next page sampe +3 --}}
                     @elseif ($datas->currentPage() == 2 && $datas->lastPage() >= 3)
                     <a href="{{ $datas->url($datas->currentPage() + 3) }}">
-                        <button class="tabel-nomor">{{ $datas->currentPage() + 3 }}</button>
+                        <button class="tabel-nomor" type="button">{{ $datas->currentPage() + 3 }}</button>
                     </a>
                     @endif
 
                     {{-- Kalo lagi di page yang ga munculin last page, munculin simbol buat ke last page --}}
                     @if ($datas->currentPage() <= $datas->lastPage() - 3)
                         <a href="{{ $datas->url($datas->lastPage()) }}">
-                            <button class="tabel-nomor">&gt;&gt;</button>
+                            <button class="tabel-nomor" type="button">&gt;&gt;</button>
                         </a>
                         @endif
 
                         {{-- Selain di last page, munculin tombol "selanjutnya" --}}
                         @if ($datas->currentPage() != $datas->lastPage())
                         <a href="{{ $datas->nextPageUrl() }}">
-                            <button id="tabel-selanjutnya">
+                            <button id="tabel-selanjutnya" type="button">
                                 Selanjutnya ->
                             </button>
                         </a>
@@ -235,31 +235,28 @@
 
         <div class="form-peminjaman">
             <div class="peminjaman-contents">
-                <h1 class="underline">Form Peminjaman</h1>
+                <h2>Form <span class="teks-ungu">Peminjaman</span></h2>
                 <div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">Nama</h3>
-                        <h3 class="teks-peminjaman">:</h3>
-                        <input class="isian-peminjaman" type="text" placeholder="Nama Peminjam" name="nama"
-                            value="{{ session('nama') }}">
+                        <h4 class="teks-peminjaman">Nama</h4>
+                        <h4 class="teks-peminjaman">:</h4>
+                        <input class="isian-peminjaman" type="text" placeholder="Nama Peminjam" name="nama">
                     </div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">NIP</h3>
-                        <h3 class="teks-peminjaman">:</h3>
-                        <input class="isian-peminjaman" type="text" placeholder="Nomor Induk Pegawai" name="nip"
-                            value="{{ session('nip') }}">
+                        <h4 class="teks-peminjaman">NIP</h4>
+                        <h4 class="teks-peminjaman">:</h4>
+                        <input class="isian-peminjaman" type="text" placeholder="Nomor Induk Pegawai" name="nip">
                     </div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">Email</h3>
-                        <h3 class="teks-peminjaman">:</h3>
-                        <input class="isian-peminjaman" type="text" placeholder="kejatijateng123@gmail.com" name="email"
-                            value="{{ session('email') }}">
+                        <h4 class="teks-peminjaman">Email</h4>
+                        <h4 class="teks-peminjaman">:</h4>
+                        <input class="isian-peminjaman" type="text" placeholder="kejatijateng123@gmail.com"
+                            name="email">
                     </div>
                     <div class="display-flex-between">
-                        <h3 class="teks-peminjaman">No HP</h3>
-                        <h3 class="teks-peminjaman">:</h3>
-                        <input class="isian-peminjaman" type="text" placeholder="08xxxxxxxxxxx" name="telepon"
-                            value="{{ session('telepon') }}">
+                        <h4 class="teks-peminjaman">No HP</h4>
+                        <h4 class="teks-peminjaman">:</h4>
+                        <input class="isian-peminjaman" type="text" placeholder="08xxxxxxxxxxx" name="telepon">
                     </div>
                 </div>
                 <div id="kirim-placement">
