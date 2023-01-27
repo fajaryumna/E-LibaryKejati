@@ -13,6 +13,7 @@ class PeminjamanController extends Controller
 {
     public function store_peminjaman(Request $request){
         
+        // dd($request);
         // validasi data
         $data = $request->validate([
             'nama' => 'required',
@@ -21,6 +22,10 @@ class PeminjamanController extends Controller
             'telepon' => 'required',
             'buku_id' => 'required'
         ]);
+
+        $buku_ids = explode(" ", $request->buku_id);
+        // dd($buku_ids);
+
 
         // $peminjaman->buku()->attach($request->buku_id);
 
@@ -37,7 +42,7 @@ class PeminjamanController extends Controller
 
         
         // store data
-        foreach ($data['buku_id'] as $buku_id) {
+        foreach ($buku_ids as $buku_id) {
             $peminjaman = new Peminjaman();
             $peminjaman->nama = $data['nama'];
             $peminjaman->nip = $data['nip'];
@@ -55,7 +60,7 @@ class PeminjamanController extends Controller
 
         // save id ke array
         $buku_array = array();
-        foreach ($request->buku_id as $bukuid) {
+        foreach ($buku_ids as $bukuid) {
             $buku_array[] = $bukuid;
         }
 

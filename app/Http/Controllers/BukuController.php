@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use session;
+use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Buku;
 
 class BukuController extends Controller
 {
@@ -19,7 +20,7 @@ class BukuController extends Controller
         $tahun_terbit = $request->input('tahun_terbit');
         $jenis_buku = $request->input('jenis_buku');
 
-        $query = Buku::query();
+        $query = Buku::where('jumlah','>',0);
         if (!empty($judul_buku)) {
             $query->where('judul_buku', 'like', '%'.$judul_buku.'%');
 
@@ -49,7 +50,13 @@ class BukuController extends Controller
         $tahun_terbit = $request->input('tahun_terbit');
         $jenis_buku = $request->input('jenis_buku');
 
+        // $selectedIds = json_decode(localStorage.getItem('selected_ids'));
+        // $selectedIds = json_decode($request->session()->get('selected_ids'));
+        // $books = Book::whereIn('id', $selectedIds)->orderBy('id', 'ASC')->get();
+        // $selectedIds = json_decode(request()->input('selected_ids'));
+        // dd($selectedIds);
         $query = Buku::where('jumlah','>',0);
+        // ->whereIn('id', $selectedIds)->orderBy('id', 'ASC')->get();
         
         if (!empty($judul_buku)) {
             $query->where('judul_buku', 'like', '%'.$judul_buku.'%');
