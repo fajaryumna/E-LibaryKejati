@@ -2,7 +2,7 @@
 <div style="display:flex; justify-content: space-between; align-items: center;
      padding:0 30px; height:70px; background-color: #D98E04;">
     <img src="images/logo-kejati.png" width="17%">
-    <form action="{{ route('logout') }}" method="post" class="d-none" s>
+    <form action="{{ route('logout') }}" method="post">
         @csrf
         <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" style="color: black;"></i>

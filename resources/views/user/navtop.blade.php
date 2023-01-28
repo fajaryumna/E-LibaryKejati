@@ -482,7 +482,7 @@
                         style="{{ Request::is('peminjamanpage*') ? 'font-weight:bold;' : '' }}">Peminjaman</a>
                     <a class="top-right-content" href="/faqpage"
                         style="{{ Request::is('faqpage*') ? 'font-weight:bold;' : '' }}">FAQ</a>
-                    <a class="top-right-content">Login</a>
+                    <a class="top-right-content" href="/login">Login</a>
                 </div>
 
             </div>
