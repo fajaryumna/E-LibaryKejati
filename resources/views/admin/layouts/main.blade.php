@@ -56,7 +56,7 @@
         .create-main {
             background-color: #fffbf5;
             text-align: center;
-            padding: 50px 0;
+            padding-bottom: 50px;
             font-size: smaller;
         }
 
