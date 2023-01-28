@@ -45,3 +45,7 @@ Route::get('/faqpage', function () {
 Route::get('/invoicepage', function () {
     return view('user.invoicepage');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

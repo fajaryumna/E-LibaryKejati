@@ -12,22 +12,22 @@
 
     {{-- @if (Request::path() == '/mainpage') --}}
     @if (Route::current()->getName() == 'mainpage')
-        <style>
-            .top-page {
-                margin: 0;
-                padding: 0 0 500px 0;
-                background-image: url(images/FotoDepanKejatiJateng.jpg);
-                /* background-image: url("https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/243184779_262108162585008_5482248783908827866_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DlmOUTmLABAAX-ppGnD&_nc_ht=scontent-sin6-2.xx&oh=00_AfBThsdQpdS-pnw2C6Vf89FYYQ70ttKKCM0SCLZzRIxG3A&oe=63B6F437"); */
-                background-size: cover;
-            }
-        </style>
+    <style>
+        .top-page {
+            margin: 0;
+            padding: 0 0 500px 0;
+            background-image: url(images/FotoDepanKejatiJateng.jpg);
+            /* background-image: url("https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/243184779_262108162585008_5482248783908827866_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DlmOUTmLABAAX-ppGnD&_nc_ht=scontent-sin6-2.xx&oh=00_AfBThsdQpdS-pnw2C6Vf89FYYQ70ttKKCM0SCLZzRIxG3A&oe=63B6F437"); */
+            background-size: cover;
+        }
+    </style>
     @else
-        <style>
-            .top-page {
-                margin: 0;
-                box-shadow: 0 0 50px -20px black;
-            }
-        </style>
+    <style>
+        .top-page {
+            margin: 0;
+            box-shadow: 0 0 50px -20px black;
+        }
+    </style>
     @endif
 
     <style>
@@ -283,7 +283,7 @@
             border-radius: 5px;
         }
 
-        #tabel-kembali{
+        #tabel-kembali {
             background-color: #d9d9d9;
             padding: 7px 60px;
             color: black;
@@ -478,7 +478,7 @@
                     <a class="top-right-content" href="/mainpage">Beranda</a>
                     <a class="top-right-content" href="/peminjamanpage">Peminjaman</a>
                     <a class="top-right-content" href="/faqpage">FAQ</a>
-                    <a class="top-right-content">Login</a>
+                    <a class="top-right-content" href="/login">Login</a>
                 </div>
 
             </div>
