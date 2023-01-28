@@ -35,6 +35,9 @@ Route::get('/create_buku', [BukuController::class, 'create_buku'])->name('create
 Route::post('/store_buku', [BukuController::class, 'store_buku'])->name('store_buku'); 
 // Route::get('/book/data', [BukuController::class, 'dataBuku'])->name('book.data');
 
+Route::get('/data_peminjaman', [PeminjamanController::class, 'data_peminjaman'])->name('data_peminjaman');
+Route::patch('update_peminjaman/{id}', [PeminjamanController::class, 'update_peminjaman'])->name('peminjaman.kembali');
+
 Route::get('/faqpage', function () {
     return view('user.faqpage');
 });
