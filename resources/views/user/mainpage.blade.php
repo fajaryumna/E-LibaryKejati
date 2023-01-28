@@ -67,36 +67,46 @@
 
             <div class="display-flex-between">
                 <h5 class="juduls " id="no_buku">No
-                    <span class="material-symbols-outlined">
+                    {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span>
+                    </span> --}}
                 </h5>
                 <h5 class="juduls ">Judul Buku
-                    <span class="material-symbols-outlined">
+                    {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span>
+                    </span> --}}
                 </h5>
-                <h5 class="juduls ">Pengarang <span class="material-symbols-outlined">
+                <h5 class="juduls ">Pengarang 
+                    {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h5>
-                <h5 class="juduls ">Penerbit <span class="material-symbols-outlined">
+                    </span> --}}
+                </h5>
+                <h5 class="juduls ">Penerbit
+                     {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h5>
-                <h5 class="juduls ">Tahun Terbit <span class="material-symbols-outlined">
+                    </span> --}}
+                </h5>
+                <h5 class="juduls ">Tahun Terbit 
+                    {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h5>
-                <h5 class="juduls " id="no_buku">Jumlah <span class="material-symbols-outlined">
+                    </span> --}}
+                </h5>
+                <h5 class="juduls " id="no_buku">Jumlah 
+                    {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h5>
-                <h5 class="juduls ">Jenis Buku <span class="material-symbols-outlined">
+                    </span> --}}
+                </h5>
+                <h5 class="juduls ">Jenis Buku 
+                    {{-- <span class="material-symbols-outlined">
                         unfold_more
-                    </span></h5>
+                    </span> --}}
+                </h5>
 
             </div>
             <hr color="black" width="100%" size="1px">
 
             @php
-                $nomor = $datas->currentPage() * 10 - 10 + 1;
+                $nomor = $datas->currentPage() * $datas->count() - $datas->count() + 1;
                 // $nomor = 1;
             @endphp
             @foreach ($datas as $data)

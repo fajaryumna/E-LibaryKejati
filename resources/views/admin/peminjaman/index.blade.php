@@ -5,18 +5,19 @@
 <!-- DataTales Example -->
 <div id="content">
     <div class="card shadow mb-4">
-        <div class="card-body">
+        <div class="card-body" style="background-color: #fffbf5">
+            <h3 class="title">Peminjaman <span class="teks-ungu">Buku</span></h3>
             <div class="table-responsive">
                 <table id="table" class="table table-striped" style="width:100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Nama Peminjam</th>
-                            <th>Nama Buku/Rak Buku</th>
-                            <th>No. Telp</th>
-                            <th>Aksi</th>
-                            <th>Status</th>
-                            <th>Tombol</th>
+                            <th style="text-align: center">No</th>
+                            <th style="text-align: center">Nama Peminjam</th>
+                            <th style="text-align: center">Nama Buku/Rak Buku</th>
+                            <th style="text-align: center">Aksi</th>
+                            <th style="text-align: center">No. Telp</th>
+                            <th style="text-align: center">Status</th>
+                            <th style="text-align: center">Tombol</th>
                         </tr>
                     </thead>
                     <tbody>

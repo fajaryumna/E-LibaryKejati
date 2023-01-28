@@ -9,7 +9,7 @@
                     <table id="table" class="table table-striped" style="width:100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th style="text-align: center; nargin:auto;">Judul</th>
+                                <th style="text-align: center">Judul</th>
                                 <th style="text-align: center">Nomor Rak</th>
                                 <th style="text-align: center">Pengarang</th>
                                 <th style="text-align: center">Penerbit</th>

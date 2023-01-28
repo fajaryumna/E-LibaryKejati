@@ -40,7 +40,7 @@ Route::patch('update_peminjaman/{id}', [PeminjamanController::class, 'update_pem
 
 Route::get('/faqpage', function () {
     return view('user.faqpage');
-});
+})->name('faqpage');
 
 Route::get('/invoicepage', function () {
     return view('user.invoicepage');
