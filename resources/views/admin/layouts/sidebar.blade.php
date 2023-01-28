@@ -19,8 +19,8 @@
     </li>
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item {{ Request::is('rekam-medis*') ? 'active' : '' }}" style="{{ Request::is('rekam-medis*') ? 'background-color: #B7B7B7BF; margin: 10px 15px 10px 0; border-radius: 0 20px 20px 0' : '' }}">
-        <a class="nav-link" href="/" style="color: black;">
+    <li class="nav-item {{ Request::is('data_peminjaman*') ? 'active' : '' }}" style="{{ Request::is('data_peminjaman*') ? 'background-color: #B7B7B7BF; margin: 10px 15px 10px 0; border-radius: 0 20px 20px 0' : '' }}">
+        <a class="nav-link" href="/data_peminjaman" style="color: black;">
             <i class="fas fa-poll-h" style="color: black;"></i>
             <span>Peminjaman</span></a>
     </li>
