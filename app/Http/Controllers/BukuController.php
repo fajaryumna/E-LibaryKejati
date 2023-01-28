@@ -101,4 +101,29 @@ class BukuController extends Controller
     public function create_buku(){
         return view ('admin.buku.create');
     }
+
+    public function store_buku(Request $request){
+        $request->validate([
+            'judul_buku' => 'required',
+            'no_rak' => 'required',
+            'nama_pengarang' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'jumlah' => 'required',
+            'jenis_buku' => 'required',
+        ]);
+
+        DB::insert('INSERT INTO buku(judul_buku, no_rak, nama_pengarang, penerbit, tahun_terbit, jumlah, jenis_buku) VALUES (:judul_buku, :no_rak, :nama_pengarang, :penerbit, :tahun_terbit, :jumlah, :jenis_buku)',
+        [
+            'judul_buku' => $request->judul_buku,
+            'no_rak' => $request->no_rak,
+            'nama_pengarang' => $request->nama_pengarang,
+            'penerbit' => $request->penerbit,
+            'tahun_terbit' => $request->tahun_terbit,
+            'jumlah' => $request->jumlah,
+            'jenis_buku' => $request->jenis_buku,
+        ]
+        );
+        return redirect()->route('create_buku')->with('success', 'Data buku berhasil disimpan');
+    }
 }

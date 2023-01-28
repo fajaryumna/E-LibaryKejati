@@ -16,27 +16,52 @@
                 <div class="col-8">
                     <div class="card">
                         <div class="card-body">
-                            <form action="/store_buku" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('store_buku') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-2">
-                                    <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
+                                    <label for="exampleInputEmail1" class="form-label">Jenis Buku</label>
                                     <select class="form-select" name="jenis_buku" aria-label="Default select example">
-                                        <option selected>Pilih Jenis Buku</option>
-                                        <option value="">Hukum Pidana</option>
-                                        <option value="">Huku Perdata</option>
+                                        <option value="HUKUM PIDANA">HUKUM PIDANA</option>
+                                        <option value="HUKUM PERDATA">HUKUM PERDATA</option>
+                                        <option value="AGAMA ISLAM">AGAMA ISLAM</option>
+                                        <option value="ILMU HUKUM">ILMU HUKUM</option>
+                                        <option value="BAHASA INGGRIS">BAHASA INGGRIS</option>
+                                        <option value="UMUM">UMUM</option>
+                                        <option value="MAJALAH">MAJALAH</option>
+                                        <option value="HPPRI">HPPRI</option>
+                                        <option value="YURISPRUDENSI">YURISPRUDENSI</option>
+                                        <option value="UNDANG-UNDANG">UNDANG-UNDANG</option>
+                                        <option value="KEJAKSAAN">KEJAKSAAN</option>
+                                        <option value="PERUNDANG-UNDANGAN">PERUNDANG-UNDANGAN</option>
+                                        <option value="PERATURAN DAERAH">PERATURAN DAERAH</option>
+                                        <option value="UU">UU</option>
                                     </select>
                                 </div>
                                 <div class="mb-2">
-                                    <label for="judul" class="form-label">Nama Lengkap</label>
-                                    <input type="text" name="name" class="form-control" id="judul"
-                                        aria-describedby="emailHelp">
+                                    <label for="judul" class="form-label">Judul Buku</label>
+                                    <input type="text" name="judul_buku" class="form-control" id="judul">
                                 </div>
                                 <div class="mb-2">
-                                    <label for="exampleInputEmail1" class="form-label">No Telepon</label>
-                                    <input type="number" name="telepon" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <label for="nama_pengarang" class="form-label">Nama Pengarang</label>
+                                    <input type="text" name="nama_pengarang" class="form-control" id="">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="mb-2">
+                                    <label for="nama_pengarang" class="form-label">Penerbit Buku</label>
+                                    <input type="text" name="penerbit" class="form-control" id="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="nama_pengarang" class="form-label">Nomor Rak</label>
+                                    <input type="text" name="no_rak" class="form-control" id="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="nama_pengarang" class="form-label">Tahun Terbit</label>
+                                    <input type="number" name="tahun_terbit" class="form-control" id="">
+                                </div>
+                                <div class="mb-2">
+                                    <label for="nama_pengarang" class="form-label">Jumlah Buku</label>
+                                    <input type="number" name="jumlah" class="form-control" id="">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
                         </div>
                     </div>
