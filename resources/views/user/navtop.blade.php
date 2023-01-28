@@ -34,7 +34,7 @@
         /* Tag Classes */
         body {
             margin: 0;
-            background-color: beige;
+            background-color: fffbf5;
         }
 
 

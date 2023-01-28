@@ -39,10 +39,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
+    <style>
+        h3.title {
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        .teks-ungu {
+            color: #94008e;
+        }
+
+        .create-main {
+            background-color: #fffbf5;
+            text-align: center;
+            padding: 50px 0;
+            font-size: smaller;
+        }
+
+        select.entri,
+        select.entri option {
+            font-size: small;
+        }
+
+        h5.title {
+            text-align: start;
+            margin: 10px;
+            padding-left: 10px;
+        }
+
+        form.entri {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 20px 10%;
+            padding: 10px 0;
+        }
+
+        input.entri,
+        select.entri {
+            width: 80%
+        }
+
+        div.create-main div.d-flex {
+            justify-content: space-between;
+            margin: 15px 50px;
+            align-items: end;
+        }
+
+        button.submit-entri {
+            width: 80%;
+            background-color: #067321;
+        }
+    </style>
 </head>
 
-<body id="page-top">
+<body id="page-top" style="font-family: 'Poppins'">
     <!-- Page Wrapper -->
     {{-- <div id="wrapper"> --}}
     <div>
@@ -55,7 +110,7 @@
             @include('admin.layouts.sidebar')
             @yield('container')
 
-            
+
 
         </div>
         <!-- End of Content Wrapper -->
