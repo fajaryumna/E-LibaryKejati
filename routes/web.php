@@ -22,13 +22,18 @@ use App\Http\Controllers\PeminjamanController;
 //     return view('user.peminjamanpage');
 // });
 
-// Route::get('/', [BukuController::class, 'indexMain'])->name('main'); //show 
-Route::get('/mainpage', [BukuController::class, 'indexMain'])->name('mainpage'); //show 
-// Route::get('/mainpage/search', [BukuController::class, 'main_search'])->name('main_search'); //show 
-Route::get('/peminjamanpage', [BukuController::class, 'indexPeminjaman'])->name('peminjamanpage'); //show 
-// Route::get('/peminjamanpage/search', [BukuController::class, 'search_peminjaman'])->name('search_peminjaman'); //show
-Route::post('/pinjam', [PeminjamanController::class, 'store_peminjaman'])->name('store_peminjaman'); //savedata 
+// Routing untuk sisi user
+Route::get('/', [BukuController::class, 'indexMain'])->name('mainpage');
+Route::get('/mainpage', [BukuController::class, 'indexMain'])->name('mainpage'); 
+Route::get('/peminjamanpage', [BukuController::class, 'indexPeminjaman'])->name('peminjamanpage'); 
+Route::post('/pinjam', [PeminjamanController::class, 'store_peminjaman'])->name('store_peminjaman');  
 
+
+// Routing untuk crud buku - sisi admin
+Route::get('/data_buku', [BukuController::class, 'indexBuku'])->name('data_buku');
+Route::get('/create_buku', [BukuController::class, 'create_buku'])->name('create_buku'); 
+Route::post('/store_buku', [BukuController::class, 'store_buku'])->name('store_buku'); 
+// Route::get('/book/data', [BukuController::class, 'dataBuku'])->name('book.data');
 
 Route::get('/faqpage', function () {
     return view('user.faqpage');
