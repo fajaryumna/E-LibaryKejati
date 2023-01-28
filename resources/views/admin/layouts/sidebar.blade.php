@@ -1,77 +1,80 @@
 <!-- Sidebar -->
-<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #e64543">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #d9d9d9;">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+    {{-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-text">
-            SIRI
+            E-Library
             <br>
-            <span style="font-style: italic;font-size: 12px;text-transform: capitalize;">Sistem Informasi <br>Rumah
-                Sakit</span>
+            <span style="font-style: italic;font-size: 
+            12px;text-transform: capitalize;"
+            >Kejaksaan Tinggi Jawa Tengah</span>
         </div>
-    </a>
+    </a> --}}
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    {{-- <hr class="sidebar-divider my-0"> --}}
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    {{-- <hr class="sidebar-divider"> --}}
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    {{-- <div class="sidebar-heading">
         Dashboard
-    </div>
+    </div> --}}
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
+    {{-- <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
         <a class="nav-link" href="/">
             <i class="fas fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
-    </li>
+    </li> --}}
 
-    <!-- Divider -->
+    {{-- <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
         Pasien
-    </div>
+    </div> --}}
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Request::is('adminbook*') ? 'active' : '' }}">
-        <a class="nav-link" href="/adminbook">
-            <i class="fas fa-user-injured"></i>
-            <span>Data Pasien</span></a>
+    <li class="nav-item {{ Request::is('data_buku*') ? 'active' : '' }}">
+        <a class="nav-link" href="/data_buku" style="color: black;">
+            {{-- <i class="fas fa-user-injured"></i> --}}
+            🕮
+            <span>Daftar Buku</span></a>
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    {{-- <hr class="sidebar-divider"> --}}
 
     {{-- Heading --}}
-    <div class="sidebar-heading">
+    {{-- <div class="sidebar-heading">
         Dokter
-    </div>
+    </div> --}}
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Request::is('data-dokter*') ? 'active' : '' }}">
-        <a class="nav-link" href="/">
-            <i class="fas fa-user-md"></i>
-            <span>Data Dokter</span></a>
+    <li class="nav-item {{ Request::is('create_buku*') ? 'active' : '' }}">
+        <a class="nav-link" href="/create_buku" style="color: black;">
+            {{-- <i class="fas fa-user-md"></i> --}}
+            🕮
+            <span>Entri Buku</span></a>
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    {{-- <hr class="sidebar-divider"> --}}
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    {{-- <div class="sidebar-heading">
         Informasi Medis
-    </div>
+    </div> --}}
 
     <!-- Nav Item - Charts -->
     <li class="nav-item {{ Request::is('rekam-medis*') ? 'active' : '' }}">
-        <a class="nav-link" href="/">
-            <i class="fas fa-poll-h"></i>
-            <span>Data Rekam Medis</span></a>
+        <a class="nav-link" href="/" style="color: black;">
+            <i class="fas fa-poll-h" style="color: black;"></i>
+            <span>Peminjaman</span></a>
     </li>
 
     <!-- Divider -->

@@ -26,7 +26,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom styles for this page -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css
     ">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
@@ -43,27 +44,18 @@
 
 <body id="page-top">
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    {{-- <div id="wrapper"> --}}
+    <div>
+        @include('admin.layouts.navbar')
 
-        @include('admin.layouts.sidebar')
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-row">
 
-            @include('admin.layouts.navbar')
+            @include('admin.layouts.sidebar')
             @yield('container')
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>&copy;
-                            <?= date('Y'); ?> Kapan Lulus
-                        </span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            
 
         </div>
         <!-- End of Content Wrapper -->
@@ -128,7 +120,7 @@
     {{-- <script src="/js/demo/datatables-demo.js"></script> --}}
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#table').DataTable();
         });
     </script>
