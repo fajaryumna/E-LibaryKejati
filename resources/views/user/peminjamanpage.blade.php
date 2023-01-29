@@ -135,8 +135,8 @@
 
         <hr color="black" width="100%" size="1px">
         <div class="bottom-buttons">
-            <a href="/mainpage">
-                <button id="tabel-kembali" type="button">Kembali</button>
+            <a >
+                <button class="tabel-kembali" id="btn-delete-storage" type="button">Reset Buku</button>
             </a>
             <div id="bottom-right">
                 <p>Halaman {{ $datas->currentPage() }}/{{ $datas->lastPage() }}</p>
@@ -284,9 +284,7 @@
                     <a href="/pinjam">
                         <button type="submit" id="kirim-peminjaman">Kirim</button>
                     </a>
-                </div>
-                <div id=" kirim-placement">
-                    <button id="btn-delete-storage">Reset</button>
+                    {{-- <button type="button" id="btn-delete-storage" class="reset-peminjaman">Reset</button> --}}
                 </div>
             </div>
         </div>
@@ -327,6 +325,7 @@
     <script>
         document.getElementById("btn-delete-storage").addEventListener("click", function(){
             localStorage.removeItem("selected_ids");
+            location.reload();
         });
     </script>
     {{-- <script>
