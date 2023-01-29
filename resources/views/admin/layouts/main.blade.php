@@ -41,6 +41,36 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": true,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    </script>
+
+    <script>
+        toastr["success"]("skill issue", "L");
+        toastr["info"]("skill issue", "L");
+        toastr["warning"]("skill issue", "L");
+        toastr["error"]("skill issue", "L");
+    </script>
     <style>
         h3.title {
             font-weight: 900;
@@ -93,7 +123,8 @@
             align-items: end;
         }
 
-        button.submit-entri, button.submit-entri:hover {
+        button.submit-entri,
+        button.submit-entri:hover {
             width: 80%;
             background-color: #067321;
             color: white;

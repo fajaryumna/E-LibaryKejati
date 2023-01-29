@@ -3,7 +3,7 @@
     <!-- Main Content -->
     <div id="content" style="width: 100%">
         <!-- Begin Page Content -->
-       
+
         <div class="create-main">
             <h3 class="title">Entri <span class="teks-ungu">Buku</span></h3>
             <form class="entri" action="{{ route('store_buku') }}" method="POST" enctype="multipart/form-data">
