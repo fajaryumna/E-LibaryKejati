@@ -135,7 +135,7 @@
 
         <hr color="black" width="100%" size="1px">
         <div class="bottom-buttons">
-            <a >
+            <a>
                 <button class="tabel-kembali" id="btn-delete-storage" type="button">Reset Buku</button>
             </a>
             <div id="bottom-right">
@@ -284,13 +284,7 @@
                     <a href="/pinjam">
                         <button type="submit" id="kirim-peminjaman">Kirim</button>
                     </a>
-<<<<<<< HEAD
-                </div>
-                <div id=" kirim-placement">
-                    <button type="reset" id="btn-delete-storage">Reset</button>
-=======
                     {{-- <button type="button" id="btn-delete-storage" class="reset-peminjaman">Reset</button> --}}
->>>>>>> 07c5f0e2042d69a9d33c31114137f8870d475cdd
                 </div>
             </div>
         </div>
@@ -330,12 +324,8 @@
 
     <script>
         document.getElementById("btn-delete-storage").addEventListener("click", function(){
-<<<<<<< HEAD
-            localStorage.clear();
-=======
             localStorage.removeItem("selected_ids");
             location.reload();
->>>>>>> 07c5f0e2042d69a9d33c31114137f8870d475cdd
         });
     </script>
     {{-- <script>
