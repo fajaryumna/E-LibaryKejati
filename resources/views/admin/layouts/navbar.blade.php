@@ -1,7 +1,7 @@
 <!-- Topbar -->
 <div style="display:flex; justify-content: space-between; align-items: center;
      padding:0 30px; height:70px; background-color: #D98E04;">
-    <img src="images/logo-kejati.png" width="17%" alt="Logo Perpustakaan Kejati">
+    <img src="{{ URL::to('/images/logo-kejati.png') }}" width="17%" alt="Logo Perpustakaan Kejati">
     <form action="{{ route('logout') }}" method="post">
         @csrf
         <a type="submit" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
