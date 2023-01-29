@@ -73,32 +73,32 @@
                 unfold_more
             </span> --}}
         </h5>
-        <h5 class="juduls ">Pengarang 
+        <h5 class="juduls ">Pengarang
             {{-- <span class="material-symbols-outlined">
                 unfold_more
             </span> --}}
         </h5>
-        <h5 class="juduls ">Penerbit 
+        <h5 class="juduls ">Penerbit
             {{-- <span class="material-symbols-outlined">
                 unfold_more
             </span> --}}
         </h5>
-        <h5 class="juduls ">Tahun Terbit 
+        <h5 class="juduls ">Tahun Terbit
             {{-- <span class="material-symbols-outlined">
                 unfold_more
             </span> --}}
         </h5>
-        <h5 class="juduls " id="no_buku">Jumlah 
+        <h5 class="juduls " id="no_buku">Jumlah
             {{-- <span class="material-symbols-outlined">
                 unfold_more
             </span> --}}
         </h5>
-        <h5 class="juduls ">Jenis Buku 
+        <h5 class="juduls ">Jenis Buku
             {{-- <span class="material-symbols-outlined">
                 unfold_more
             </span> --}}
         </h5>
-        <h5 class="juduls ">Pinjam 
+        <h5 class="juduls ">Pinjam
             {{-- <span class="material-symbols-outlined">
                 check_box
             </span> --}}
@@ -285,6 +285,9 @@
                         <button type="submit" id="kirim-peminjaman">Kirim</button>
                     </a>
                 </div>
+                <div id=" kirim-placement">
+                    <button id="btn-delete-storage">Reset</button>
+                </div>
             </div>
         </div>
     </form>
@@ -319,7 +322,12 @@
             }
         });
     }
+    </script>
 
+    <script>
+        document.getElementById("btn-delete-storage").addEventListener("click", function(){
+            localStorage.removeItem("selected_ids");
+        });
     </script>
     {{-- <script>
         window.addEventListener("unload", function() {
