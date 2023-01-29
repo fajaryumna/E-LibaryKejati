@@ -9,6 +9,7 @@
                 <table id="table" class="table table-striped" style="width:100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th style="text-align: center">No</th>
                             <th style="text-align: center">Judul</th>
                             <th style="text-align: center">Nomor Rak</th>
                             <th style="text-align: center">Pengarang</th>
@@ -19,8 +20,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                        $nomor = 1;
+                        @endphp
                         @foreach ($books as $book)
                         <tr>
+                            <td>{{ $nomor++ }}</td>
                             <td>{{ $book->judul_buku }}</td>
                             <td>{{ $book->no_rak }}</td>
                             <td>{{ $book->nama_pengarang }}</td>
