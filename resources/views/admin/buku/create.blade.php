@@ -56,7 +56,7 @@
                 <div class="mb-2 d-flex">
                     <div>
                     </div>
-                    <button type="submit" class="btn btn-primary submit-entri entri">Simpan data buku</button>
+                    <button type="submit" class="btn submit-entri entri">Simpan data buku</button>
 
                 </div>
             </form>

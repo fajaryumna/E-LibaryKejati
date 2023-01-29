@@ -93,9 +93,11 @@
             align-items: end;
         }
 
-        button.submit-entri {
+        button.submit-entri, button.submit-entri:hover {
             width: 80%;
             background-color: #067321;
+            color: white;
+            font-size: small;
         }
     </style>
 </head>

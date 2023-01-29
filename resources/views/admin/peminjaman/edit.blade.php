@@ -35,12 +35,10 @@
                     value="{{ $p->tanggal_pengembalian }}" max="{{ $tanggal_maksimal }}">
             </div>
             <div class="mb-2 d-flex">
-                <div>
-                </div>
-                <a href="/data_peminjaman">
-                    <button class="btn btn-warning submit-entri entri">Kembali</button>
+                <a href="/data_peminjaman" style="width:18%;">
+                    <button class="btn" style="width:100%; background-color: #d9d9d9; font-size: small;">Kembali</button>
                 </a>
-                <button type="submit" class="btn btn-primary submit-entri entri">Simpan Data Peminjaman</button>
+                <button type="submit" class="btn" style="width:80%; background-color: #067321; color: white; font-size: small;">Simpan Data Peminjaman</button>
 
             </div>
         </form>
