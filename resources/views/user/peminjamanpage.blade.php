@@ -286,7 +286,7 @@
                     </a>
                 </div>
                 <div id=" kirim-placement">
-                    <button id="btn-delete-storage">Reset</button>
+                    <button type="reset" id="btn-delete-storage">Reset</button>
                 </div>
             </div>
         </div>
@@ -326,7 +326,7 @@
 
     <script>
         document.getElementById("btn-delete-storage").addEventListener("click", function(){
-            localStorage.removeItem("selected_ids");
+            localStorage.clear();
         });
     </script>
     {{-- <script>
