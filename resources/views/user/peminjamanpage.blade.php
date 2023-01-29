@@ -52,14 +52,25 @@
     <h3 class="daftar-buku">Daftar Buku</h3>
     <div class="display-flex-between ">
         <h3></h3>
-        <h6 class="menampilkan-buku">Menampilkan
+        {{-- <h6 class="menampilkan-buku">Menampilkan
             <span class="jumlah-buku"><button class="jumlah-buku-dropbtn">{{ $datas->count() }}</button>
                 <span class="jumlah-buku-contents">
                     <a class="jumlah-buku-content" href="#">10</a>
                     <a class="jumlah-buku-content" href="#">20</a>
                     <a class="jumlah-buku-content" href="#">50</a>
                     <a class="jumlah-buku-content" href="#">100</a>
-                </span></span> data
+                </span></span> data --}}
+            <form action="{{url('/peminjamanpage')}}" method="get">
+                <label for="pagination">Menampilkan </label>
+                <select name="pagination" id="pagination" onchange="this.form.submit()">
+                    <option selected>{{ $datas->count() }}</option>
+                    <option class="jumlah-buku-content" value="10">10</option>
+                    <option class="jumlah-buku-content" value="20">20</option>
+                    <option class="jumlah-buku-content" value="50">50</option>
+                    <option class="jumlah-buku-content" value="100">100</option>
+                </select>
+                <label for="pagination">data</label>
+            </form>
         </h6>
     </div>
     <div class="display-flex-between">

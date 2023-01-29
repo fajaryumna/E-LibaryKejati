@@ -35,8 +35,8 @@ class BukuController extends Controller
         if(!empty($jenis_buku)){
             $query->where('jenis_buku', 'like', '%'.$jenis_buku.'%');
         }
-
-        $datas = $query->paginate(10)->withQueryString();
+        $page = $request->pagination ?: 10;
+        $datas = $query->paginate($page)->withQueryString();
         return view('user.mainpage', ['datas' => $datas]);
     }
 
@@ -71,7 +71,8 @@ class BukuController extends Controller
             $query->where('jenis_buku', 'like', '%'.$jenis_buku.'%');
         }
 
-        $datas = $query->paginate(10)->withQueryString();
+        $page = $request->pagination ?: 10;
+        $datas = $query->paginate($page)->withQueryString();
         return view('user.peminjamanpage', ['datas'=> $datas]);
     }
 

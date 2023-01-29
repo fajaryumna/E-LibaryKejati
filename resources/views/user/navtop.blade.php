@@ -345,7 +345,7 @@
             font-size: large;
             padding: 7px 25px;
         }
-        
+
         .reset-peminjaman {
             border: none;
             margin: 20px 0 30px auto;
@@ -488,7 +488,7 @@
                 <div class="top-right-contents">
                     <a class="top-right-content" href="/mainpage"
                         style="{{ Route::current()->getName() == 'mainpage' ? 'font-weight:bold;' : '' }}">Beranda</a>
-                    <a class="top-right-content" href="/peminjamanpage"
+                    <a class="top-right-content" id="btn-delete-storage" href="/peminjamanpage"
                         style="{{ Request::is('peminjamanpage*') ? 'font-weight:bold;' : '' }}">Peminjaman</a>
                     <a class="top-right-content" href="/faqpage"
                         style="{{ Request::is('faqpage*') ? 'font-weight:bold;' : '' }}">FAQ</a>
@@ -579,6 +579,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById("btn-delete-storage").addEventListener("click", function(){
+            localStorage.removeItem("selected_ids");
+            location.reload();
+        });
+    </script>
 </body>
 
 </html>
