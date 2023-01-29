@@ -2,7 +2,7 @@
 @section('container')
 <!-- DataTales Example -->
 <div id="content">
-    <div class="card shadow mb-4">
+    <div class="card mb-4" style="border-radius: 0!important;">
         <div class="card-body" style="background-color: #fffbf5">
             <h3 class="title">Koleksi <span class="teks-ungu">Buku</span></h3>
             <div class="table-responsive">
