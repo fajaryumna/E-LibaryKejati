@@ -283,7 +283,7 @@
             border-radius: 5px;
         }
 
-        #tabel-kembali {
+        .tabel-kembali {
             background-color: #d9d9d9;
             padding: 7px 60px;
             color: black;
@@ -345,6 +345,17 @@
             font-size: large;
             padding: 7px 25px;
         }
+        
+        .reset-peminjaman {
+            border: none;
+            margin: 20px 0 30px auto;
+            border-radius: 30px;
+            background-color: #d9d9d9;
+            /* color: #f6f6f6; */
+            font-size: large;
+            padding: 7px 25px;
+        }
+
 
         /* FAQ */
         #pertanyaans {
