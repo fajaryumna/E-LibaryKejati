@@ -124,6 +124,9 @@ class PeminjamanController extends Controller
 
     public function delete_peminjaman($id){
         $peminjaman = Peminjaman::find($id);
+        if($peminjaman->status != 'Kembali'){
+            return redirect()->route('data_peminjaman')->with('error', 'Buku belum dikembalikan');
+        }
         $peminjaman->delete();
         return redirect()->route('data_peminjaman')->with('success', 'Data peminjaman berhasil dihapus');
     }
