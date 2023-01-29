@@ -33,6 +33,10 @@ Route::post('/pinjam', [PeminjamanController::class, 'store_peminjaman'])->name(
 Route::get('/data_buku', [BukuController::class, 'indexBuku'])->name('data_buku');
 Route::get('/create_buku', [BukuController::class, 'create_buku'])->name('create_buku'); 
 Route::post('/store_buku', [BukuController::class, 'store_buku'])->name('store_buku'); 
+Route::get('edit_buku/{id}', [BukuController::class, 'edit_buku'])->name('edit_buku');
+Route::post('update_buku/{id}', [BukuController::class, 'update_buku'])->name('update_buku');
+Route::post('delete_buku/{id}', [BukuController::class, 'delete_buku'])->name('delete_buku');
+
 // Route::get('/book/data', [BukuController::class, 'dataBuku'])->name('book.data');
 
 Route::get('/data_peminjaman', [PeminjamanController::class, 'data_peminjaman'])->name('data_peminjaman');
