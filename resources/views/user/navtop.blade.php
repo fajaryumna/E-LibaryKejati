@@ -11,8 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     {{-- @if (Request::path() == '/mainpage') --}}
-    {{-- @if (Route::current()->getName() == 'mainpage') --}}
-    @if (Request::is('mainpage*'))
+    @if (Route::current()->getName() == 'mainpage')
     <style>
         .top-page {
             margin: 0;
@@ -477,7 +476,7 @@
                 </div>
                 <div class="top-right-contents">
                     <a class="top-right-content" href="/mainpage"
-                        style="{{ Request::is('mainpage*') ? 'font-weight:bold;' : '' }}">Beranda</a>
+                        style="{{ Route::current()->getName() == 'mainpage' ? 'font-weight:bold;' : '' }}">Beranda</a>
                     <a class="top-right-content" href="/peminjamanpage"
                         style="{{ Request::is('peminjamanpage*') ? 'font-weight:bold;' : '' }}">Peminjaman</a>
                     <a class="top-right-content" href="/faqpage"
