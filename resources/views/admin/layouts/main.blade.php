@@ -46,7 +46,7 @@
             font-weight: 900;
             margin-bottom: 50px;
             text-align: center;
-            margin: 50px auto;
+            padding-top: 50px;
         }
 
         .teks-ungu {
@@ -54,6 +54,7 @@
         }
 
         .create-main {
+
             background-color: #fffbf5;
             text-align: center;
             padding-bottom: 50px;
@@ -66,6 +67,7 @@
         }
 
         h5.title {
+
             text-align: start;
             margin: 10px;
             padding-left: 10px;
@@ -81,7 +83,8 @@
 
         input.entri,
         select.entri {
-            width: 80%
+            width: 80%;
+            font-size: small;
         }
 
         div.create-main div.d-flex {
