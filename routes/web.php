@@ -40,7 +40,11 @@ Route::post('delete_buku/{id}', [BukuController::class, 'delete_buku'])->name('d
 // Route::get('/book/data', [BukuController::class, 'dataBuku'])->name('book.data');
 
 Route::get('/data_peminjaman', [PeminjamanController::class, 'data_peminjaman'])->name('data_peminjaman');
-Route::patch('update_peminjaman/{id}', [PeminjamanController::class, 'update_peminjaman'])->name('peminjaman.kembali');
+Route::patch('update_pengembalian/{id}', [PeminjamanController::class, 'update_pengembalian'])->name('update_pengembalian');
+Route::get('edit_peminjaman/{id}', [PeminjamanController::class, 'edit_peminjaman'])->name('edit_peminjaman');
+Route::post('update_peminjaman/{id}', [PeminjamanController::class, 'update_peminjaman'])->name('update_peminjaman');
+Route::post('delete_peminjaman/{id}', [PeminjamanController::class, 'delete_peminjaman'])->name('delete_peminjaman');
+
 
 Route::get('/faqpage', function () {
     return view('user.faqpage');

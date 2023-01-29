@@ -30,15 +30,40 @@
                             <td>{{ $p->nama }}</td>
                             <td>{{ $p->judul }}{{ " / " }}{{ $p->rak }}</td>
                             <td>
-                                <a href="/data-dokter/{{ $p->id }}/edit" class="btn btn-warning"><i
+                                <a href="/edit_peminjaman/{{ $p->id }}" class="btn btn-warning"><i
                                         class="fas fa-edit"></i></a>
-                                <form action="/data-dokter/{{ $p->id }}" method="" class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="btn btn-danger border-0"
-                                        onclick="return confirm('Upps, Yakin mau hapus data dari {{ $p->nama }}?')"><i
-                                            class="fas fa-trash-alt"></i></button>
-                                </form>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#hapusModal{{ $p->id }}"> <i class="fa fa-trash"></i>
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="hapusModal{{ $p->id }}" tabindex="-1"
+                                    aria-labelledby="hapusModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="hapusModalLabel">Konfirmasi</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form method="POST" action="{{ route('delete_peminjaman', $p->id) }}">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    Apakah Anda yakin ingin menghapus data ini?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Tidak</button>
+                                                    <button type="submit" class="btn btn-primary">Ya</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </td>
                             <td>{{ $p->telepon }}</td>
                             <td>{{ $p->status }}</td>
@@ -46,7 +71,7 @@
                                 {{-- <a href="/update_peminjaman/{{ $p->id }}">
                                     <button type="button" class="btn btn-primary">Kembali</button>
                                 </a> --}}
-                                <form action="{{ route('peminjaman.kembali',  $p->id) }}" method="POST">
+                                <form action="{{ route('update_pengembalian',  $p->id) }}" method="POST">
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn btn-success">Kembali</button>

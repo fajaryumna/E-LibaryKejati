@@ -79,7 +79,7 @@ class PeminjamanController extends Controller
         return view('admin.peminjaman.index', ['peminjaman' => $peminjaman], );
     }
 
-    public function update_peminjaman($id){
+    public function update_pengembalian($id){
         // dd($id);
         $peminjaman = Peminjaman::find($id);
         // dd($peminjaman);
@@ -97,5 +97,34 @@ class PeminjamanController extends Controller
         $peminjaman->status = "Kembali";
         $peminjaman->save();
         return redirect()->route('data_peminjaman')->with('message', 'Buku dengan judul '.$buku->judul.' telah dikembalikan');
+    }
+
+    // pergi ke tampilan edit buku
+    public function edit_peminjaman($id) {
+        // dd($peminjaman);
+
+        $peminjaman = DB::table('peminjaman')
+            ->join('buku', 'peminjaman.buku_id', '=', 'buku.id')
+            ->select('peminjaman.*', 'buku.judul_buku as judul')
+            ->where('peminjaman.id', '=', $id)
+            ->get();
+        // dd($peminjaman);
+        return view('admin.peminjaman.edit', ['peminjaman'=> $peminjaman]);
+    }
+
+    // update buku dengan query builder dan typed Bindings
+    public function update_peminjaman($id, Request $request) {
+    
+        $peminjaman = Peminjaman::find($id);
+        $peminjaman->status = "Diperpanjang";
+        $peminjaman->update($request->all());
+
+        return redirect()->route('data_peminjaman')->with('success', 'Peminjaman berhasil di perpanjang');
+    }
+
+    public function delete_peminjaman($id){
+        $peminjaman = Peminjaman::find($id);
+        $peminjaman->delete();
+        return redirect()->route('data_peminjaman')->with('success', 'Data peminjaman berhasil dihapus');
     }
 }
