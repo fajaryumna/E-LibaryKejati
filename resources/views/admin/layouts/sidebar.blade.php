@@ -2,7 +2,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #d9d9d9; width:10rem!important">
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Request::is('data_buku*') ? 'active' : '' }}" style="{{ Request::is('data_buku*') ? 'background-color: #B7B7B7BF; margin: 10px 15px 10px 0; border-radius: 0 20px 20px 0' : '' }}">
+    <li class="nav-item {{ Request::is('data_buku*') ? 'active' : '' }}" style="{{ Request::is('data_buku*')||Request::is('edit_buku*') ? 'background-color: #B7B7B7BF; margin: 10px 15px 10px 0; border-radius: 0 20px 20px 0' : '' }}">
         <a class="nav-link" href="/data_buku" style="color: black;">
             {{-- <i class="fas fa-user-injured"></i> --}}
             🕮
