@@ -3,7 +3,7 @@
 
 
 <!-- DataTales Example -->
-<div id="content">
+<div id="content" style="width:100%;">
     <div class="card shadow mb-4">
         <div class="card-body" style="background-color: #fffbf5">
             <h3 class="title">Peminjaman <span class="teks-ungu">Buku</span></h3>
