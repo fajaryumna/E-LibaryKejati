@@ -572,7 +572,7 @@
                                 class="footer-sosmed-logo" src="images/Twitter.png" alt="Twitter"></a>
                         <a href='https://www.instagram.com/kejatijateng' target="_blank"><img class="footer-sosmed-logo"
                                 src="images/Instagram.png" alt="Instagram"></a>
-                        <a href='https://youtube.com/@kejaksaantinggijawatengah3021' target="_blank"><img
+                        <a href='https://youtube.com/@kejaksaantinggijawatengah2021' target="_blank"><img
                                 class="footer-sosmed-logo" src="images/Youtube.png" alt="Youtube"></a>
                     </div>
                 </div>
