@@ -139,7 +139,7 @@
             <hr color="black" width="100%" size="1px">
             <div class="bottom-buttons">
                 <a href="/peminjamanpage">
-                    <button id="peminjaman-buku">Peminjaman Buku</button>
+                    <button id="peminjaman-buku" onclick="bebasku()">Peminjaman Buku</button>
                 </a>
 
                 <div id="bottom-right">
@@ -263,5 +263,11 @@
             event.preventDefault();
             window.location.href = '/mainpage';
         });
+    </script>
+    <script>
+        function bebasku() {
+                localStorage.removeItem("selected_ids");
+                location.reload();
+            };
     </script>
     @endsection
