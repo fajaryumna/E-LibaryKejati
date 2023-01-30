@@ -75,6 +75,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+    @endif
+</script>
 {{-- <script>
     $(document).ready(function() {
         $('#buku-table').DataTable({

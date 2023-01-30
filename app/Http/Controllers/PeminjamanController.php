@@ -86,7 +86,7 @@ class PeminjamanController extends Controller
 
         // Mengecek kondisi status buku
         if($peminjaman->status == 'Kembali'){
-            return redirect()->route('data_peminjaman')->with('error', 'Buku sudah dikembalikan');
+            return redirect()->route('data_peminjaman')->with('error', 'Buku sudah dikembalikan sebelumnya');
         }
 
         // update jumlah buku
@@ -96,7 +96,7 @@ class PeminjamanController extends Controller
 
         $peminjaman->status = "Kembali";
         $peminjaman->save();
-        return redirect()->route('data_peminjaman')->with('message', 'Buku dengan judul '.$buku->judul.' telah dikembalikan');
+        return redirect()->route('data_peminjaman')->with('success', 'Buku telah berhasil dikembalikan');
     }
 
     // pergi ke tampilan edit buku
@@ -116,6 +116,9 @@ class PeminjamanController extends Controller
     public function update_peminjaman($id, Request $request) {
     
         $peminjaman = Peminjaman::find($id);
+        if($peminjaman->status == 'Diperpanjang'){
+            return redirect()->route('data_peminjaman')->with('error', 'Gagal perpanjang karena sudah pernah diperpanjang');
+        }
         $peminjaman->status = "Diperpanjang";
         $peminjaman->update($request->all());
 
@@ -125,9 +128,9 @@ class PeminjamanController extends Controller
     public function delete_peminjaman($id){
         $peminjaman = Peminjaman::find($id);
         if($peminjaman->status != 'Kembali'){
-            return redirect()->route('data_peminjaman')->with('error', 'Buku belum dikembalikan');
+            return redirect()->route('data_peminjaman')->with('error', 'Hapus peminjaman gagal karena buku belum dikembalikan');
         }
         $peminjaman->delete();
-        return redirect()->route('data_peminjaman')->with('success', 'Data peminjaman berhasil dihapus');
+        return redirect()->route('data_peminjaman')->with('success', 'Peminjaman berhasil dihapus');
     }
 }
