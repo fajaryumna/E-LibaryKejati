@@ -85,6 +85,11 @@
                 unfold_more
             </span> --}}
             </h5>
+            <h5 class="juduls ">No Klasifikasi
+                {{-- <span class="material-symbols-outlined">
+                unfold_more
+            </span> --}}
+            </h5>
             <h5 class="juduls ">Pengarang
                 {{-- <span class="material-symbols-outlined">
                 unfold_more
@@ -132,6 +137,7 @@
 
             <h5 class="juduls buku" id="no_buku">{{ $nomor++ }}</h5>
             <h5 class="juduls buku">{{ $data->judul_buku }}</h5>
+            <h5 class="juduls buku">{{ $data->no_klasifikasi }}</h5>
             <h5 class="juduls buku">{{ $data->nama_pengarang }}</h5>
             <h5 class="juduls buku text-center">{{ $data->penerbit }}</h5>
             <h5 class="juduls buku text-center">{{ $data->tahun_terbit }}</h5>
