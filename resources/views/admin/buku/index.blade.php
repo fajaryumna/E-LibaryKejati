@@ -86,7 +86,7 @@
         $('#buku-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('adminbook.data') }}",
+            ajax: "{{ route('book.data') }}",
             columns: [
                 { data: 'judul_buku', name: 'judul_buku' },
                 { data: 'no_rak', name: 'no_rak' },

@@ -74,6 +74,7 @@ class PeminjamanController extends Controller
         $peminjaman = DB::table('peminjaman')
             ->join('buku', 'peminjaman.buku_id', '=', 'buku.id')
             ->select('peminjaman.*', 'buku.judul_buku as judul', 'buku.no_rak as rak')
+            ->orderBy('id', 'DESC')
             ->get();
         // dd($peminjaman);
         return view('admin.peminjaman.index', ['peminjaman' => $peminjaman], );
