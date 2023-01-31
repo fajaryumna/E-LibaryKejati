@@ -11,7 +11,8 @@
                         <tr>
                             <th style="text-align: center">No</th>
                             <th style="text-align: center">Judul</th>
-                            <th style="text-align: center">Nomor Rak</th>
+                            <th style="text-align: center">No Rak</th>
+                            <th style="text-align: center">No Klasifikasi</th>
                             <th style="text-align: center">Pengarang</th>
                             <th style="text-align: center">Penerbit</th>
                             <th style="text-align: center">Tahun</th>
@@ -28,6 +29,7 @@
                             <td>{{ $nomor++ }}</td>
                             <td>{{ $book->judul_buku }}</td>
                             <td>{{ $book->no_rak }}</td>
+                            <td>{{ $book->no_klasifikasi }}</td>
                             <td>{{ $book->nama_pengarang }}</td>
                             <td>{{ $book->penerbit }}</td>
                             <td>{{ $book->tahun_terbit }}</td>

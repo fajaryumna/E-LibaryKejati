@@ -66,7 +66,12 @@
                         value="{{ $buku->penerbit }}">
                 </div>
                 <div class="mb-2 d-flex">
-                    <label for="nama_pengarang" class="form-label">Nomor Rak</label>
+                    <label for="nama_pengarang" class="form-label">No Rak</label>
+                    <input type="text" name="no_rak" class="form-control entri" id=""
+                        value="{{ $buku->no_rak }}">
+                </div>
+                <div class="mb-2 d-flex">
+                    <label for="nama_pengarang" class="form-label">No Klasifikasi</label>
                     <input type="text" name="no_rak" class="form-control entri" id=""
                         value="{{ $buku->no_rak }}">
                 </div>

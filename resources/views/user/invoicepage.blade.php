@@ -109,7 +109,7 @@
             <td>{{ $peminjaman->tanggal_pinjam->format('d M Y') }}</td>
         </tr>
         <tr class="even-table">
-            <th>Judul Buku / Lemari Buku</th>
+            <th>Judul Buku (No Klasifikasi) / Rak Buku</th>
             <td>
                 @php
                 $nomor = 1;
@@ -120,7 +120,7 @@
                 $buku = App\Models\Buku::where('id', $id_buku)->get();
                 @endphp
                 @foreach ($buku as $bk)
-                <h4>{{ $nomor++ }} <span>. </span> {{ $bk->judul_buku }} / <span class='bold'>{{ $bk->no_rak }}</span>
+                <h4>{{ $nomor++ }} <span>. </span> {{ $bk->judul_buku }} ({{$bk->no_klasifikasi}}) / <span class='bold'>{{ $bk->no_rak }}</span>
                 </h4>
                 @endforeach
                 @endforeach
