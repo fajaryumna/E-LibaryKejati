@@ -55,7 +55,7 @@
             </div>
             <div class="mb-2 d-flex">
                 <label for="nama_pengarang" class="form-label">Nomor Klasifikasi</label>
-                <input type="number" name="jumlah" class="form-control entri" id="">
+                <input type="text" name="no_klasifikasi" class="form-control entri" id="">
             </div>
             <div class="mb-2 d-flex">
                 <div>

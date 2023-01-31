@@ -111,9 +111,11 @@ class BukuController extends Controller
             'tahun_terbit' => 'required',
             'jumlah' => 'required',
             'jenis_buku' => 'required',
+            'no_klasifikasi' => 'required',
+
         ]);
 
-        DB::insert('INSERT INTO buku(judul_buku, no_rak, nama_pengarang, penerbit, tahun_terbit, jumlah, jenis_buku) VALUES (:judul_buku, :no_rak, :nama_pengarang, :penerbit, :tahun_terbit, :jumlah, :jenis_buku)',
+        DB::insert('INSERT INTO buku(judul_buku, no_rak, nama_pengarang, penerbit, tahun_terbit, jumlah, jenis_buku, no_klasifikasi) VALUES (:judul_buku, :no_rak, :nama_pengarang, :penerbit, :tahun_terbit, :jumlah, :jenis_buku, :no_klasifikasi)',
         [
             'judul_buku' => $request->judul_buku,
             'no_rak' => $request->no_rak,
@@ -122,7 +124,8 @@ class BukuController extends Controller
             'tahun_terbit' => $request->tahun_terbit,
             'jumlah' => $request->jumlah,
             'jenis_buku' => $request->jenis_buku,
-        ]
+            'no_klasifikasi' => $request->no_klasifikasi,
+            ]
         );
         return redirect()->route('create_buku')->with('success', 'Data buku berhasil disimpan');
     }
@@ -143,9 +146,10 @@ class BukuController extends Controller
             'tahun_terbit' => 'required',
             'jumlah' => 'required',
             'jenis_buku' => 'required',
+            'no_klasifikasi' => 'required',
         ]);
 
-        DB::update('UPDATE buku SET judul_buku = :judul_buku, no_rak = :no_rak, nama_pengarang = :nama_pengarang, penerbit = :penerbit, tahun_terbit = :tahun_terbit, jumlah = :jumlah, jenis_buku = :jenis_buku WHERE id = :id',
+        DB::update('UPDATE buku SET judul_buku = :judul_buku, no_rak = :no_rak, nama_pengarang = :nama_pengarang, penerbit = :penerbit, tahun_terbit = :tahun_terbit, jumlah = :jumlah, jenis_buku = :jenis_buku, no_klasifikasi = :no_klasifikasi WHERE id = :id',
         [
             'id' => $id,
             'judul_buku' => $request->judul_buku,
@@ -155,6 +159,7 @@ class BukuController extends Controller
             'tahun_terbit' => $request->tahun_terbit,
             'jumlah' => $request->jumlah,
             'jenis_buku' => $request->jenis_buku,
+            'no_klasifikasi' => $request->no_klasifikasi,
         ]
         );
         return redirect()->route('data_buku')->with('success', 'Data buku berhasil diubah');
