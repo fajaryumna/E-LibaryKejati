@@ -107,7 +107,7 @@
                     unfold_more
                 </span> --}}
             </h5>
-            <h5 class="juduls " id="no_buku">Jumlah
+            <h5 class="juduls " id="no_buku">Jumlah buku
                 {{-- <span class="material-symbols-outlined">
                     unfold_more
                 </span> --}}
